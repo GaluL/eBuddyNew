@@ -51,6 +51,8 @@ namespace eBuddyApp.Services.Azure
             get { return _ScheduledRuns; }
         }
 
+        internal event EventHandler UserDataLoaded; 
+
         private MobileService()
         {
             _FinishedRuns = new ObservableCollection<RunItem>();
@@ -203,6 +205,8 @@ namespace eBuddyApp.Services.Azure
             }
 
             await CollectUserData();
+
+            UserDataLoaded?.Invoke(this, null);
 
             return true;
         }

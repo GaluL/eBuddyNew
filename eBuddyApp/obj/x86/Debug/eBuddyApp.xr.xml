@@ -70,7 +70,6 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="LineHeight" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="MaxWidth" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Margin" />
@@ -91,8 +90,8 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="ElementName" />
-      <RootProperty Name="Path" />
       <RootProperty Name="Mode" />
+      <RootProperty Name="Path" />
       <RootProperty Name="UpdateSourceTrigger" />
       <RootProperty Name="Converter" />
     </RootType>
@@ -178,7 +177,7 @@
       <RootProperty Name="Resources" />
       <RootProperty Name="Background" />
     </RootType>
-    <RootType FullName="eBuddyApp.ViewModels.DetailPageViewModel" />
+    <RootType FullName="eBuddyApp.ViewModels.ProfilePageViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
@@ -225,7 +224,7 @@
       <RootMethod Name="GetIsTargetElement" />
       <RootMethod Name="SetIsTargetElement" />
     </RootType>
-    <RootType FullName="eBuddyApp.Views.DetailPage" />
+    <RootType FullName="eBuddyApp.Views.ProfilePage" />
     <RootType FullName="eBuddyApp.ViewModels.MainPageViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="BorderThickness" />
@@ -306,27 +305,10 @@
       <RootProperty Name="ClearHistory" />
       <RootProperty Name="PageType" />
       <RootProperty Name="Content" />
-      <RootProperty Name="ButtonType" />
       <RootProperty Name="PageParameter" />
       <RootProperty Name="NavigationTransitionInfo" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
-      <RootMethod Name="GetBehaviors" />
-      <RootMethod Name="SetBehaviors" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.SuppressNavigationTransitionInfo" />
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
-      <RootProperty Name="EventName" />
-      <RootProperty Name="Actions" />
-    </RootType>
-    <RootType FullName="Template10.Behaviors.MessageDialogAction">
-      <RootProperty Name="Title" />
-      <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ToolTipService">
-      <RootMethod Name="GetToolTip" />
-      <RootMethod Name="SetToolTip" />
-    </RootType>
     <RootType FullName="eBuddyApp.Views.Shell" />
     <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
       <RootProperty Name="HorizontalAlignment" />

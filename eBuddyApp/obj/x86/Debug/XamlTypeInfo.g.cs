@@ -156,7 +156,7 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[77];
+            _typeNameTable = new string[69];
             _typeNameTable[0] = "Template10.Common.BootStrapper";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
             _typeNameTable[2] = "Template10.Common.StateItems";
@@ -208,12 +208,12 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
             _typeNameTable[48] = "Windows.UI.Xaml.Controls.Control";
             _typeNameTable[49] = "Windows.Foundation.Size";
             _typeNameTable[50] = "eBuddyApp.Views.Busy";
-            _typeNameTable[51] = "eBuddyApp.ViewModels.DetailPageViewModel";
+            _typeNameTable[51] = "eBuddyApp.ViewModels.ProfilePageViewModel";
             _typeNameTable[52] = "Template10.Mvvm.ViewModelBase";
             _typeNameTable[53] = "Template10.Mvvm.BindableBase";
             _typeNameTable[54] = "Template10.Common.IDispatcherWrapper";
             _typeNameTable[55] = "Template10.Common.IStateItems";
-            _typeNameTable[56] = "eBuddyApp.Views.DetailPage";
+            _typeNameTable[56] = "eBuddyApp.Views.ProfilePage";
             _typeNameTable[57] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[58] = "eBuddyApp.ViewModels.MainPageViewModel";
             _typeNameTable[59] = "eBuddyApp.Views.MainPage";
@@ -224,18 +224,10 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
             _typeNameTable[64] = "Template10.Converters.ValueWhenConverter";
             _typeNameTable[65] = "eBuddyApp.Views.SettingsPage";
             _typeNameTable[66] = "Windows.UI.Xaml.Media.Animation.TransitionCollection";
-            _typeNameTable[67] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[68] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[69] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[70] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[71] = "Microsoft.Xaml.Interactivity.Trigger";
-            _typeNameTable[72] = "Microsoft.Xaml.Interactivity.Behavior";
-            _typeNameTable[73] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[74] = "Template10.Behaviors.MessageDialogAction";
-            _typeNameTable[75] = "eBuddyApp.Views.Shell";
-            _typeNameTable[76] = "eBuddyApp.Views.Splash";
+            _typeNameTable[67] = "eBuddyApp.Views.Shell";
+            _typeNameTable[68] = "eBuddyApp.Views.Splash";
 
-            _typeTable = new global::System.Type[77];
+            _typeTable = new global::System.Type[69];
             _typeTable[0] = typeof(global::Template10.Common.BootStrapper);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
             _typeTable[2] = typeof(global::Template10.Common.StateItems);
@@ -287,12 +279,12 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
             _typeTable[48] = typeof(global::Windows.UI.Xaml.Controls.Control);
             _typeTable[49] = typeof(global::Windows.Foundation.Size);
             _typeTable[50] = typeof(global::eBuddyApp.Views.Busy);
-            _typeTable[51] = typeof(global::eBuddyApp.ViewModels.DetailPageViewModel);
+            _typeTable[51] = typeof(global::eBuddyApp.ViewModels.ProfilePageViewModel);
             _typeTable[52] = typeof(global::Template10.Mvvm.ViewModelBase);
             _typeTable[53] = typeof(global::Template10.Mvvm.BindableBase);
             _typeTable[54] = typeof(global::Template10.Common.IDispatcherWrapper);
             _typeTable[55] = typeof(global::Template10.Common.IStateItems);
-            _typeTable[56] = typeof(global::eBuddyApp.Views.DetailPage);
+            _typeTable[56] = typeof(global::eBuddyApp.Views.ProfilePage);
             _typeTable[57] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[58] = typeof(global::eBuddyApp.ViewModels.MainPageViewModel);
             _typeTable[59] = typeof(global::eBuddyApp.Views.MainPage);
@@ -303,16 +295,8 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
             _typeTable[64] = typeof(global::Template10.Converters.ValueWhenConverter);
             _typeTable[65] = typeof(global::eBuddyApp.Views.SettingsPage);
             _typeTable[66] = typeof(global::Windows.UI.Xaml.Media.Animation.TransitionCollection);
-            _typeTable[67] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[68] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[69] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[70] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[71] = typeof(global::Microsoft.Xaml.Interactivity.Trigger);
-            _typeTable[72] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
-            _typeTable[73] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[74] = typeof(global::Template10.Behaviors.MessageDialogAction);
-            _typeTable[75] = typeof(global::eBuddyApp.Views.Shell);
-            _typeTable[76] = typeof(global::eBuddyApp.Views.Splash);
+            _typeTable[67] = typeof(global::eBuddyApp.Views.Shell);
+            _typeTable[68] = typeof(global::eBuddyApp.Views.Splash);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -358,8 +342,8 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
         private object Activate_42_PageHeader() { return new global::Template10.Controls.PageHeader(); }
         private object Activate_47_Resizer() { return new global::Template10.Controls.Resizer(); }
         private object Activate_50_Busy() { return new global::eBuddyApp.Views.Busy(); }
-        private object Activate_51_DetailPageViewModel() { return new global::eBuddyApp.ViewModels.DetailPageViewModel(); }
-        private object Activate_56_DetailPage() { return new global::eBuddyApp.Views.DetailPage(); }
+        private object Activate_51_ProfilePageViewModel() { return new global::eBuddyApp.ViewModels.ProfilePageViewModel(); }
+        private object Activate_56_ProfilePage() { return new global::eBuddyApp.Views.ProfilePage(); }
         private object Activate_58_MainPageViewModel() { return new global::eBuddyApp.ViewModels.MainPageViewModel(); }
         private object Activate_59_MainPage() { return new global::eBuddyApp.Views.MainPage(); }
         private object Activate_60_RunPage() { return new global::eBuddyApp.Views.RunPage(); }
@@ -368,11 +352,7 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
         private object Activate_63_AboutPartViewModel() { return new global::eBuddyApp.ViewModels.AboutPartViewModel(); }
         private object Activate_64_ValueWhenConverter() { return new global::Template10.Converters.ValueWhenConverter(); }
         private object Activate_65_SettingsPage() { return new global::eBuddyApp.Views.SettingsPage(); }
-        private object Activate_68_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_70_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_73_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_74_MessageDialogAction() { return new global::Template10.Behaviors.MessageDialogAction(); }
-        private object Activate_75_Shell() { return new global::eBuddyApp.Views.Shell(); }
+        private object Activate_67_Shell() { return new global::eBuddyApp.Views.Shell(); }
         private void MapAdd_2_StateItems(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -397,18 +377,6 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Template10.Controls.HamburgerButtonInfo>)instance;
             var newItem = (global::Template10.Controls.HamburgerButtonInfo)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_68_BehaviorCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
-            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_73_ActionCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
-            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
 
@@ -797,10 +765,9 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 51:   //  eBuddyApp.ViewModels.DetailPageViewModel
+            case 51:   //  eBuddyApp.ViewModels.ProfilePageViewModel
                 userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
-                userType.Activator = Activate_51_DetailPageViewModel;
-                userType.AddMemberName("Value");
+                userType.Activator = Activate_51_ProfilePageViewModel;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -830,9 +797,9 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 56:   //  eBuddyApp.Views.DetailPage
+            case 56:   //  eBuddyApp.Views.ProfilePage
                 userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_56_DetailPage;
+                userType.Activator = Activate_56_ProfilePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -844,6 +811,7 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
             case 58:   //  eBuddyApp.ViewModels.MainPageViewModel
                 userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.Activator = Activate_58_MainPageViewModel;
+                userType.AddMemberName("WelcomeText");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -907,69 +875,14 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
                 xamlType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 67:   //  Microsoft.Xaml.Interactivity.Interaction
-                userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.AddMemberName("Behaviors");
-                xamlType = userType;
-                break;
-
-            case 68:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
-                userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_68_BehaviorCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 69:   //  Windows.UI.Xaml.DependencyObjectCollection
-                xamlType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 70:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
-                userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Trigger"));
-                userType.Activator = Activate_70_EventTriggerBehavior;
-                userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
-                userType.AddMemberName("EventName");
-                userType.AddMemberName("SourceObject");
-                xamlType = userType;
-                break;
-
-            case 71:   //  Microsoft.Xaml.Interactivity.Trigger
-                userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
-                userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
-                userType.AddMemberName("Actions");
-                xamlType = userType;
-                break;
-
-            case 72:   //  Microsoft.Xaml.Interactivity.Behavior
-                userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.AddMemberName("AssociatedObject");
-                xamlType = userType;
-                break;
-
-            case 73:   //  Microsoft.Xaml.Interactivity.ActionCollection
-                userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_73_ActionCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 74:   //  Template10.Behaviors.MessageDialogAction
-                userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_74_MessageDialogAction;
-                userType.AddMemberName("Title");
-                userType.AddMemberName("Content");
-                userType.AddMemberName("OkText");
-                xamlType = userType;
-                break;
-
-            case 75:   //  eBuddyApp.Views.Shell
+            case 67:   //  eBuddyApp.Views.Shell
                 userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_75_Shell;
+                userType.Activator = Activate_67_Shell;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 76:   //  eBuddyApp.Views.Splash
+            case 68:   //  eBuddyApp.Views.Splash
                 userType = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -987,6 +900,8 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
                 {
                     var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
                     global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Microsoft.Toolkit.Uwp.UI.Controls.Microsoft_Toolkit_Uwp_UI_Controls_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
                     provider = new global::Template10.Template10__Library__XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
                     otherProviders.Add(provider); 
                     provider = new global::winsdkfb.winsdkfb_uwp_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
@@ -1855,45 +1770,45 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
             var that = (global::eBuddyApp.Views.Busy)instance;
             that.IsBusy = (global::System.Boolean)Value;
         }
-        private object get_85_DetailPageViewModel_Value(object instance)
-        {
-            var that = (global::eBuddyApp.ViewModels.DetailPageViewModel)instance;
-            return that.Value;
-        }
-        private void set_85_DetailPageViewModel_Value(object instance, object Value)
-        {
-            var that = (global::eBuddyApp.ViewModels.DetailPageViewModel)instance;
-            that.Value = (global::System.String)Value;
-        }
-        private object get_86_ViewModelBase_NavigationService(object instance)
+        private object get_85_ViewModelBase_NavigationService(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.NavigationService;
         }
-        private void set_86_ViewModelBase_NavigationService(object instance, object Value)
+        private void set_85_ViewModelBase_NavigationService(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.NavigationService = (global::Template10.Services.NavigationService.INavigationService)Value;
         }
-        private object get_87_ViewModelBase_Dispatcher(object instance)
+        private object get_86_ViewModelBase_Dispatcher(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.Dispatcher;
         }
-        private void set_87_ViewModelBase_Dispatcher(object instance, object Value)
+        private void set_86_ViewModelBase_Dispatcher(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.Dispatcher = (global::Template10.Common.IDispatcherWrapper)Value;
         }
-        private object get_88_ViewModelBase_SessionState(object instance)
+        private object get_87_ViewModelBase_SessionState(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.SessionState;
         }
-        private void set_88_ViewModelBase_SessionState(object instance, object Value)
+        private void set_87_ViewModelBase_SessionState(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.SessionState = (global::Template10.Common.IStateItems)Value;
+        }
+        private object get_88_MainPageViewModel_WelcomeText(object instance)
+        {
+            var that = (global::eBuddyApp.ViewModels.MainPageViewModel)instance;
+            return that.WelcomeText;
+        }
+        private void set_88_MainPageViewModel_WelcomeText(object instance, object Value)
+        {
+            var that = (global::eBuddyApp.ViewModels.MainPageViewModel)instance;
+            that.WelcomeText = (global::System.String)Value;
         }
         private object get_89_SettingsPageViewModel_SettingsPartViewModel(object instance)
         {
@@ -2014,74 +1929,6 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
         {
             var that = (global::Template10.Controls.ModalDialog)instance;
             that.ModalTransitions = (global::Windows.UI.Xaml.Media.Animation.TransitionCollection)Value;
-        }
-        private object get_102_Interaction_Behaviors(object instance)
-        {
-            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
-        }
-        private void set_102_Interaction_Behaviors(object instance, object Value)
-        {
-            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
-        }
-        private object get_103_Trigger_Actions(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactivity.Trigger)instance;
-            return that.Actions;
-        }
-        private object get_104_EventTriggerBehavior_EventName(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.EventName;
-        }
-        private void set_104_EventTriggerBehavior_EventName(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            that.EventName = (global::System.String)Value;
-        }
-        private object get_105_EventTriggerBehavior_SourceObject(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.SourceObject;
-        }
-        private void set_105_EventTriggerBehavior_SourceObject(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            that.SourceObject = (global::System.Object)Value;
-        }
-        private object get_106_Behavior_AssociatedObject(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactivity.Behavior)instance;
-            return that.AssociatedObject;
-        }
-        private object get_107_MessageDialogAction_Title(object instance)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            return that.Title;
-        }
-        private void set_107_MessageDialogAction_Title(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            that.Title = (global::System.String)Value;
-        }
-        private object get_108_MessageDialogAction_Content(object instance)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            return that.Content;
-        }
-        private void set_108_MessageDialogAction_Content(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            that.Content = (global::System.String)Value;
-        }
-        private object get_109_MessageDialogAction_OkText(object instance)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            return that.OkText;
-        }
-        private void set_109_MessageDialogAction_OkText(object instance, object Value)
-        {
-            var that = (global::Template10.Behaviors.MessageDialogAction)instance;
-            that.OkText = (global::System.String)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -2666,29 +2513,29 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
                 xamlMember.Getter = get_84_Busy_IsBusy;
                 xamlMember.Setter = set_84_Busy_IsBusy;
                 break;
-            case "eBuddyApp.ViewModels.DetailPageViewModel.Value":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("eBuddyApp.ViewModels.DetailPageViewModel");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "Value", "String");
-                xamlMember.Getter = get_85_DetailPageViewModel_Value;
-                xamlMember.Setter = set_85_DetailPageViewModel_Value;
-                break;
             case "Template10.Mvvm.ViewModelBase.NavigationService":
                 userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "NavigationService", "Template10.Services.NavigationService.INavigationService");
-                xamlMember.Getter = get_86_ViewModelBase_NavigationService;
-                xamlMember.Setter = set_86_ViewModelBase_NavigationService;
+                xamlMember.Getter = get_85_ViewModelBase_NavigationService;
+                xamlMember.Setter = set_85_ViewModelBase_NavigationService;
                 break;
             case "Template10.Mvvm.ViewModelBase.Dispatcher":
                 userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "Dispatcher", "Template10.Common.IDispatcherWrapper");
-                xamlMember.Getter = get_87_ViewModelBase_Dispatcher;
-                xamlMember.Setter = set_87_ViewModelBase_Dispatcher;
+                xamlMember.Getter = get_86_ViewModelBase_Dispatcher;
+                xamlMember.Setter = set_86_ViewModelBase_Dispatcher;
                 break;
             case "Template10.Mvvm.ViewModelBase.SessionState":
                 userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "SessionState", "Template10.Common.IStateItems");
-                xamlMember.Getter = get_88_ViewModelBase_SessionState;
-                xamlMember.Setter = set_88_ViewModelBase_SessionState;
+                xamlMember.Getter = get_87_ViewModelBase_SessionState;
+                xamlMember.Setter = set_87_ViewModelBase_SessionState;
+                break;
+            case "eBuddyApp.ViewModels.MainPageViewModel.WelcomeText":
+                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("eBuddyApp.ViewModels.MainPageViewModel");
+                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "WelcomeText", "String");
+                xamlMember.Getter = get_88_MainPageViewModel_WelcomeText;
+                xamlMember.Setter = set_88_MainPageViewModel_WelcomeText;
                 break;
             case "eBuddyApp.ViewModels.SettingsPageViewModel.SettingsPartViewModel":
                 userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("eBuddyApp.ViewModels.SettingsPageViewModel");
@@ -2773,62 +2620,6 @@ namespace eBuddyApp.eBuddyApp_XamlTypeInfo
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_101_ModalDialog_ModalTransitions;
                 xamlMember.Setter = set_101_ModalDialog_ModalTransitions;
-                break;
-            case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
-                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
-                xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_102_Interaction_Behaviors;
-                xamlMember.Setter = set_102_Interaction_Behaviors;
-                break;
-            case "Microsoft.Xaml.Interactivity.Trigger.Actions":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Trigger");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_103_Trigger_Actions;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "EventName", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_104_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_104_EventTriggerBehavior_EventName;
-                break;
-            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_105_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_105_EventTriggerBehavior_SourceObject;
-                break;
-            case "Microsoft.Xaml.Interactivity.Behavior.AssociatedObject":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_106_Behavior_AssociatedObject;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Template10.Behaviors.MessageDialogAction.Title":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "Title", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_107_MessageDialogAction_Title;
-                xamlMember.Setter = set_107_MessageDialogAction_Title;
-                break;
-            case "Template10.Behaviors.MessageDialogAction.Content":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "Content", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_108_MessageDialogAction_Content;
-                xamlMember.Setter = set_108_MessageDialogAction_Content;
-                break;
-            case "Template10.Behaviors.MessageDialogAction.OkText":
-                userType = (global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Behaviors.MessageDialogAction");
-                xamlMember = new global::eBuddyApp.eBuddyApp_XamlTypeInfo.XamlMember(this, "OkText", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_109_MessageDialogAction_OkText;
-                xamlMember.Setter = set_109_MessageDialogAction_OkText;
                 break;
             }
             return xamlMember;

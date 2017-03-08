@@ -4,9 +4,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace eBuddyApp.Views
 {
-    public sealed partial class DetailPage : Page
+    public sealed partial class ProfilePage : Page
     {
-        public DetailPage()
+        public ProfilePage()
         {
             InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Disabled;

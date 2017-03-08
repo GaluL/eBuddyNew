@@ -1,4 +1,4 @@
-<Page x:Class="eBuddyApp.Views.DetailPage"
+<Page x:Class="eBuddyApp.Views.ProfilePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:Behaviors="using:Template10.Behaviors"
@@ -13,7 +13,7 @@
       mc:Ignorable="d">
 
     <Page.DataContext>
-        <vm:DetailPageViewModel x:Name="ViewModel" />
+        <vm:ProfilePageViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -63,10 +63,37 @@
                       RelativePanel.AlignRightWithPanel="True"
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
-            <StackPanel>
-                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="You passed:" />
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.Value, Mode=OneWay, FallbackValue=DesigntimeValue}" />
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}" Text="Name: " />
+                <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.UserData.PrivateName, Mode=OneWay}" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}" Text="Gender: " />
+                <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.UserData.Gender, Mode=OneWay}" />
+                <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}" Text="Age: " />
+                <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.UserData.Age, Mode=OneWay}" />
+                <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}" Text="Weight: " />
+                <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.UserData.Weight, Mode=OneWay}" />
+                <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}" Text="Height: " />
+                <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.UserData.Height, Mode=OneWay}" />
+                <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}" Text="Mail: " />
+                <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.UserData.Email, Mode=OneWay}"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}" Text="Score: " />
+                <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.Score, Mode=OneWay}"/>
+            </Grid>
+
         </ScrollViewer>
 
     </RelativePanel>

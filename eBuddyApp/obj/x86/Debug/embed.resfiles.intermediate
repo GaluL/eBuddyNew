@@ -2,8 +2,8 @@ App.xbf
 Controls\LoginPart.xbf
 Styles\Custom.xbf
 Views\Busy.xbf
-Views\DetailPage.xbf
 Views\MainPage.xbf
+Views\ProfilePage.xbf
 Views\RunPage.xbf
 Views\SettingsPage.xbf
 Views\Shell.xbf
