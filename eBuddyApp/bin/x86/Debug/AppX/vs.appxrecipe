@@ -10,13 +10,13 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>5f86e8c2-a9f2-47a4-8485-6ca18bc86e56</PackageIdentityName>
     <PackageIdentityPublisher>CN=galkl</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\eBuddyNew\eBuddyApp\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>0D8594DD612B621B6C9239BDD7E5C5BDD514920A06EDDE24D05BE02B399628F6</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>9E4BAECD4638A81A62BE895593ADBC15F193441FD5936EE65728BA65701973EE</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5f86e8c2-a9f2-47a4-8485-6ca18bc86e56_1.0.0.0_x86__y9def0188ggjw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5f86e8c2-a9f2-47a4-8485-6ca18bc86e56_y9def0188ggjw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5f86e8c2-a9f2-47a4-8485-6ca18bc86e56</RegisteredPackageID>
@@ -25,16 +25,20 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-08T17:43:17.335</Modified>
+      <Modified>2017-03-10T17:41:26.149</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\bin\x86\Debug\eBuddyApp.exe">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\eBuddyApp.exe">
       <PackagePath>entrypoint\eBuddyApp.exe</PackagePath>
-      <Modified>2017-03-08T17:43:04.199</Modified>
+      <Modified>2017-03-10T17:40:34.680</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
+      <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
+      <Modified>2014-05-05T09:25:44.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\Microsoft.Azure.Mobile.Client\3.1.0\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
@@ -147,6 +151,18 @@
     <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactivity.dll">
       <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
       <Modified>2016-10-19T15:07:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\MvvmLightLibs\5.3.0\lib\windows81\GalaSoft.MvvmLight.Extras.dll">
+      <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
+      <Modified>2016-04-22T14:28:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\MvvmLightLibs\5.3.0\lib\windows81\GalaSoft.MvvmLight.Platform.dll">
+      <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
+      <Modified>2016-04-22T14:28:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\MvvmLightLibs\5.3.0\lib\windows81\GalaSoft.MvvmLight.dll">
+      <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
+      <Modified>2016-04-22T14:28:12.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\Newtonsoft.Json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -564,10 +580,6 @@
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2016-08-09T06:14:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb.dll">
-      <PackagePath>winsdkfb.dll</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\Robmikh.CompositionSurfaceFactory\0.7.1\lib\uap10.0\Robmikh.CompositionSurfaceFactory.winmd">
       <PackagePath>Robmikh.CompositionSurfaceFactory.winmd</PackagePath>
       <Modified>2017-02-08T20:43:02.000</Modified>
@@ -576,91 +588,63 @@
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
       <Modified>2016-08-09T06:14:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\lib\win10\winsdkfb.winmd">
-      <PackagePath>winsdkfb.winmd</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb\Controls\FacebookLoginButton.xbf">
-      <PackagePath>FacebookLoginButton.xbf</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb\FacebookDialog.xbf">
-      <PackagePath>FacebookDialog.xbf</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb\FacebookProfilePictureControl.xbf">
-      <PackagePath>FacebookProfilePictureControl.xbf</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb\Themes\Generic.xbf">
-      <PackagePath>Generic.xbf</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb\Themes\Styles.xbf">
-      <PackagePath>Styles.xbf</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb\Images\fb_blank_profile_portrait.png">
-      <PackagePath>fb_blank_profile_portrait.png</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Help.htm">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Help.htm">
       <PackagePath>Help.htm</PackagePath>
-      <Modified>2017-03-01T20:13:55.896</Modified>
+      <Modified>2017-03-08T18:11:48.580</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Images\fblogin.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Images\fblogin.png">
       <PackagePath>Images\fblogin.png</PackagePath>
-      <Modified>2017-03-03T11:05:28.962</Modified>
+      <Modified>2017-03-08T18:11:48.581</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Images\fbsignup.png">
+      <PackagePath>Images\fbsignup.png</PackagePath>
+      <Modified>2017-03-09T13:41:31.741</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2017-03-01T20:13:55.295</Modified>
+      <Modified>2017-03-08T18:11:48.572</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-01T20:13:55.295</Modified>
+      <Modified>2017-03-08T18:11:48.573</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-01T20:13:55.295</Modified>
+      <Modified>2017-03-08T18:11:48.575</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-01T20:13:55.311</Modified>
+      <Modified>2017-03-08T18:11:48.575</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-01T20:13:55.311</Modified>
+      <Modified>2017-03-08T18:11:48.576</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-01T20:13:55.311</Modified>
+      <Modified>2017-03-08T18:11:48.577</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-01T20:13:55.311</Modified>
+      <Modified>2017-03-08T18:11:48.577</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-03-01T20:13:55.796</Modified>
+      <Modified>2017-03-08T18:11:48.587</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\bin\x86\Debug\eBuddyApp.xr.xml">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\eBuddyApp.xr.xml">
       <PackagePath>eBuddyApp.xr.xml</PackagePath>
-      <Modified>2017-03-08T17:20:36.054</Modified>
+      <Modified>2017-03-10T17:19:01.618</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-01-05T14:04:57.259</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\winsdkfb\0.13.20170131.2\runtimes\win10-x86\native\winsdkfb\Images\fb_blank_profile_portrait.png">
-      <PackagePath>winsdkfb\Images\fb_blank_profile_portrait.png</PackagePath>
-      <Modified>2017-01-31T12:46:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.3.1\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml">
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml</PackagePath>
@@ -770,14 +754,14 @@
       <PackagePath>Template10Library\Themes\Resizer.xaml</PackagePath>
       <Modified>2016-10-17T09:42:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-08T17:43:16.524</Modified>
+      <Modified>2017-03-10T17:41:25.101</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\galkl\OneDrive\Public\Documents\Visual Studio 2015\Projects\eBuddyApp\eBuddyApp\bin\x86\Debug\Core\eBuddyApp.exe">
+    <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\Core\eBuddyApp.exe">
       <PackagePath>eBuddyApp.exe</PackagePath>
-      <Modified>2017-03-08T17:43:17.326</Modified>
+      <Modified>2017-03-10T17:41:26.139</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

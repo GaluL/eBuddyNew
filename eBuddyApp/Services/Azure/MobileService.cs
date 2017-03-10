@@ -75,7 +75,7 @@ namespace eBuddyApp.Services.Azure
             try
             {
                 // Try to get an existing credential from the vault.
-                //credential = vault.FindAllByResource(provider.ToString()).FirstOrDefault();
+                credential = vault.FindAllByResource(provider.ToString()).FirstOrDefault();
             }
             catch (Exception)
             {
@@ -109,7 +109,7 @@ namespace eBuddyApp.Services.Azure
                     credential = new PasswordCredential(provider.ToString(),
                         user.UserId, user.MobileServiceAuthenticationToken);
                     vault.Add(credential);
-
+                    
                     success = true;
                     message = string.Format("You are now logged in - {0}", user.UserId);
                 }
@@ -212,5 +212,18 @@ namespace eBuddyApp.Services.Azure
         }
 
 
+        public async void RegisterUser(UserItem userData)
+        {
+            userData.FacebookId = Service.CurrentUser.UserId;
+
+            await Service.GetTable<UserItem>().InsertAsync(userData);
+
+            _UserData = userData;
+        }
+		
+		public async void SaveRunData(RunItem runData)
+        {
+            await Service.GetTable<RunItem>().InsertAsync(runData);
+        }
     }
 }

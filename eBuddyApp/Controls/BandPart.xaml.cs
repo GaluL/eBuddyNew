@@ -1,39 +1,33 @@
 ﻿using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using eBuddy;
 using eBuddyApp.Services.Azure;
 
 namespace Template10.Samples.SearchSample.Controls
 {
-    public sealed partial class LoginPart : UserControl
+    public sealed partial class BandPart : UserControl
     {
-        public LoginPart()
+        public BandPart()
         {
             this.InitializeComponent();
         }
 
         public event EventHandler HideRequested;
         public event EventHandler LoggedIn;
-        public event EventHandler SignUpRequested;
 
         private async void LoginClicked(object sender, RoutedEventArgs e)
         {
-            if (await MobileService.Instance.FacebookLogIn())
+            if (await BandService.Instance.Connect())
             {
-                LoggedIn?.Invoke(this, EventArgs.Empty);
-                HideRequested?.Invoke(this, EventArgs.Empty);
+                LoggedIn?.Invoke(this, null);
+                HideRequested?.Invoke(this, null);
             }
         }
 
         private void CloseClicked(object sender, RoutedEventArgs e)
         {
             HideRequested?.Invoke(this, EventArgs.Empty);
-        }
-
-        //public Models.UserCredentials UserCredentials { get; set; }
-        private async void fbSignup_OnClick(object sender, RoutedEventArgs e)
-        {
-            SignUpRequested?.Invoke(this, null);             
         }
     }
 }

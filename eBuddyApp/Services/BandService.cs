@@ -35,25 +35,25 @@ namespace eBuddy
             }
         }
 
-        //private HeartRateSample _heartRate;
-        //public HeartRateSample HeartRate
-        //{
-        //    get { return _heartRate; }
-        //    private set
-        //    {
-        //        _heartRate = value;
-        //        OnHeartRateChange?.Invoke(this, value);
-        //    }
-        //}
+        private int _heartRate;
+        public int HeartRate
+        {
+            get { return _heartRate; }
+            private set
+            {
+                _heartRate = value;
+                OnHeartRateChange?.Invoke(this, value);
+            }
+        }
 
         public event Action<bool> OnConnectionStatusChange;
-        //public event EventHandler<HeartRateSample> OnHeartRateChange;
+        public event EventHandler<int> OnHeartRateChange;
 
         private BandService()
         {
         }
 
-        public async Task Connect()
+        public async Task<bool> Connect()
         {
             try
             {
@@ -62,7 +62,7 @@ namespace eBuddy
                 if (pairedBands.Length < 1)
                 {
                     //this.viewModel.StatusMessage = "This sample app requires a Microsoft Band paired to your device. Also make sure that you have the latest firmware installed on your Band, as provided by the latest Microsoft Health app.";
-                    return;
+                    return false;
                 }
 
                 // Connect to Microsoft Band.
@@ -87,17 +87,19 @@ namespace eBuddy
                 else
                 {
                     // Subscribe to HeartRate data.
-                    //bandClient.SensorManager.HeartRate.ReadingChanged += (s, args) => {
-                    //    HeartRate = new HeartRateSample(args.SensorReading.HeartRate, args.SensorReading.Quality, args.SensorReading.Timestamp);
-                    //};
+                    bandClient.SensorManager.HeartRate.ReadingChanged += (s, args) =>
+                    {
+                        HeartRate = args.SensorReading.HeartRate;
+                    };
                 }
                 ;
                 await bandClient.SensorManager.HeartRate.StartReadingsAsync();
 
-                IsConnected = true;
+                return true;
             }
             catch (Exception ex)
             {
+                return false;
                 //this.viewModel.StatusMessage = ex.ToString();
             }
         }

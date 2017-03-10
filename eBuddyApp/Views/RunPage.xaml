@@ -12,6 +12,11 @@
     xmlns:vm="using:eBuddyApp.ViewModels"
     mc:Ignorable="d"
     xmlns:maps="using:Windows.UI.Xaml.Controls.Maps">
+    
+    <Page.DataContext>
+        <vm:SoloRunViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+    
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <VisualStateManager.VisualStateGroups>
@@ -21,8 +26,8 @@
                         <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <!--  TODO: change properties for narrow view  -->
-                        <Setter Target="stateTextBox.Text" Value="Narrow Visual State" />
+                        <Setter Target="myMap.Height" Value="400"/>
+                        <Setter Target="myMap.Width" Value="400"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateNormal">
@@ -30,8 +35,8 @@
                         <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <!--  TODO: change properties for normal view  -->
-                        <Setter Target="stateTextBox.Text" Value="Normal Visual State" />
+                        <Setter Target="myMap.Height" Value="400"/>
+                        <Setter Target="myMap.Width" Value="400"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateWide">
@@ -39,8 +44,8 @@
                         <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <!--  TODO: change properties for wide view  -->
-                        <Setter Target="stateTextBox.Text" Value="Wide Visual State" />
+                        <Setter Target="myMap.Height" Value="400"/>
+                        <Setter Target="myMap.Width" Value="400"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -59,50 +64,47 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.Below="pageHeader">
 
-            <Grid>
+                <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="*"/>
                     <RowDefinition/>
-                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <VisualStateManager.VisualStateGroups>
-                    <VisualStateGroup>
-                        <VisualState x:Name="wideState">
-                            <VisualState.StateTriggers>
-                                <AdaptiveTrigger MinWindowWidth="400" />
-                            </VisualState.StateTriggers>
-                            <VisualState.Setters>
-                                <Setter Target="myMap.Height" Value="400"/>
-                                <Setter Target="myMap.Width" Value="400"/>
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState x:Name="narrowState">
-                            <VisualState.StateTriggers>
-                                <AdaptiveTrigger MinWindowWidth="0" />
-                            </VisualState.StateTriggers>
-                            <VisualState.Setters>
-                                <Setter Target="myMap.Height" Value="400"/>
-                                <Setter Target="myMap.Width" Value="400"/>
-                            </VisualState.Setters>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateManager.VisualStateGroups>
-                <Grid Row="0">
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Distance: "/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{x:Bind ViewModel.RunData.Distance, Mode=OneWay}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Time: "/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="{x:Bind ViewModel.RunData.Time, Mode=OneWay}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Speed: "/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Bind ViewModel.RunData.Speed, Mode=OneWay}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Heartrate: "/>
+                    <TextBlock Grid.Row="1" Grid.Column="3" Text="{x:Bind ViewModel.Heartrate, Mode=OneWay}"/>
                 </Grid>
-                <maps:MapControl x:Name="myMap"
-                                     Grid.Row="1"
-                                     ZoomLevel="{Binding ElementName=zoomSlider,Path=Value, Mode=TwoWay}"
-                                     Heading="{Binding ElementName=headingSlider,Path=Value, Mode=TwoWay}"
-                                     DesiredPitch="{Binding ElementName=desiredPitchSlider,Path=Value, Mode=TwoWay}"    
-                                     HorizontalAlignment="Left"
-                                     Loaded="MyMap_Loaded"
-                                     MapTapped="MyMap_MapTapped"
+
+                <Grid Grid.Row="1"  Margin="10,389,-10,10.333">
+                    <maps:MapControl x:Name="myMap"  
+                                     TiltInteractionMode="GestureAndControl"
+                                     ZoomInteractionMode="GestureAndControl"
+                                     Center="{x:Bind ViewModel.CurrentLocation, Mode=OneWay}"
                                      MapServiceToken="OARdWd6u76SCOJpF63br~nEfdGL_BYBbFn1jt0wom8Q~Aoyg4vAPbQczjy1VVSUyFfFcpz_G1Q9eqrBUO9FdMP1a725us7XvhB7zycvi-lbq" Margin="-40,-380,0,48" Height="Auto" Width="385"
-                                     />
-                <Grid Row="2">
+                                     ZoomLevel="15"/>
                 </Grid>
-                <Button x:Name="ButtonGo" Grid.Row="3" Click="ButtonGo_OnClick" Foreground="WhiteSmoke" Background="Orange">Start Running</Button>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,145.667,15,-145.667">
+                    <Button Command="{x:Bind ViewModel.StartRun}" Foreground="WhiteSmoke" Background="Orange" HorizontalAlignment="Left">Start</Button>
+                    <Button Command="{x:Bind ViewModel.StopRun}" Foreground="WhiteSmoke" Background="Orange">Stop</Button>
+                </StackPanel>
             </Grid>
         </RelativePanel>
     </RelativePanel>

@@ -3,6 +3,15 @@
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
+      "CommonServiceLocator/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -410,6 +419,28 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "MvvmLight/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmLightLibs": "5.3.0"
+        }
+      },
+      "MvvmLightLibs/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.3.0"
+        },
+        "compile": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -2351,116 +2382,18 @@
             "rid": "win10-x86"
           }
         }
-      },
-      "winsdkfb/0.13.20170131.2": {
-        "type": "package",
-        "compile": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtime": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm/native/winsdkfb.dll": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/winsdkfb.pri": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/winsdkfb/Controls/FacebookLoginButton.xbf": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/winsdkfb/FacebookDialog.xbf": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/winsdkfb/FacebookProfilePictureControl.xbf": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/winsdkfb/Images/fb_blank_profile_portrait.png": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/winsdkfb/Themes/Generic.xbf": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/winsdkfb/Themes/Styles.xbf": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-x64/native/winsdkfb.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/winsdkfb.pri": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/winsdkfb/Controls/FacebookLoginButton.xbf": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/winsdkfb/FacebookDialog.xbf": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/winsdkfb/FacebookProfilePictureControl.xbf": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/winsdkfb/Images/fb_blank_profile_portrait.png": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/winsdkfb/Themes/Generic.xbf": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/winsdkfb/Themes/Styles.xbf": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/native/winsdkfb.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/winsdkfb.pri": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/winsdkfb/Controls/FacebookLoginButton.xbf": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/winsdkfb/FacebookDialog.xbf": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/winsdkfb/FacebookProfilePictureControl.xbf": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/winsdkfb/Images/fb_blank_profile_portrait.png": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/winsdkfb/Themes/Generic.xbf": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/winsdkfb/Themes/Styles.xbf": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
-        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "CommonServiceLocator/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -2816,6 +2749,28 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "MvvmLight/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmLightLibs": "5.3.0"
+        }
+      },
+      "MvvmLightLibs/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.3.0"
+        },
+        "compile": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -4884,28 +4839,18 @@
         "native": {
           "runtimes/win10-arm/native/Microsoft.Graphics.Canvas.dll": {}
         }
-      },
-      "winsdkfb/0.13.20170131.2": {
-        "type": "package",
-        "compile": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtime": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-arm/native/winsdkfb.dll": {},
-          "runtimes/win10-arm/native/winsdkfb.pri": {},
-          "runtimes/win10-arm/native/winsdkfb/Controls/FacebookLoginButton.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/FacebookDialog.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/FacebookProfilePictureControl.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/Images/fb_blank_profile_portrait.png": {},
-          "runtimes/win10-arm/native/winsdkfb/Themes/Generic.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/Themes/Styles.xbf": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "CommonServiceLocator/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -5262,6 +5207,28 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "MvvmLight/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmLightLibs": "5.3.0"
+        }
+      },
+      "MvvmLightLibs/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.3.0"
+        },
+        "compile": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -7368,28 +7335,18 @@
         "native": {
           "runtimes/win10-arm/native/Microsoft.Graphics.Canvas.dll": {}
         }
-      },
-      "winsdkfb/0.13.20170131.2": {
-        "type": "package",
-        "compile": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtime": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-arm/native/winsdkfb.dll": {},
-          "runtimes/win10-arm/native/winsdkfb.pri": {},
-          "runtimes/win10-arm/native/winsdkfb/Controls/FacebookLoginButton.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/FacebookDialog.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/FacebookProfilePictureControl.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/Images/fb_blank_profile_portrait.png": {},
-          "runtimes/win10-arm/native/winsdkfb/Themes/Generic.xbf": {},
-          "runtimes/win10-arm/native/winsdkfb/Themes/Styles.xbf": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "CommonServiceLocator/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -7748,6 +7705,28 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "MvvmLight/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmLightLibs": "5.3.0"
+        }
+      },
+      "MvvmLightLibs/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.3.0"
+        },
+        "compile": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -9822,28 +9801,18 @@
         "native": {
           "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
         }
-      },
-      "winsdkfb/0.13.20170131.2": {
-        "type": "package",
-        "compile": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtime": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/winsdkfb.dll": {},
-          "runtimes/win10-x64/native/winsdkfb.pri": {},
-          "runtimes/win10-x64/native/winsdkfb/Controls/FacebookLoginButton.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/FacebookDialog.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/FacebookProfilePictureControl.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/Images/fb_blank_profile_portrait.png": {},
-          "runtimes/win10-x64/native/winsdkfb/Themes/Generic.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/Themes/Styles.xbf": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "CommonServiceLocator/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -10203,6 +10172,28 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "MvvmLight/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmLightLibs": "5.3.0"
+        }
+      },
+      "MvvmLightLibs/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.3.0"
+        },
+        "compile": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -12315,28 +12306,18 @@
         "native": {
           "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
         }
-      },
-      "winsdkfb/0.13.20170131.2": {
-        "type": "package",
-        "compile": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtime": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/winsdkfb.dll": {},
-          "runtimes/win10-x64/native/winsdkfb.pri": {},
-          "runtimes/win10-x64/native/winsdkfb/Controls/FacebookLoginButton.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/FacebookDialog.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/FacebookProfilePictureControl.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/Images/fb_blank_profile_portrait.png": {},
-          "runtimes/win10-x64/native/winsdkfb/Themes/Generic.xbf": {},
-          "runtimes/win10-x64/native/winsdkfb/Themes/Styles.xbf": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "CommonServiceLocator/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -12695,6 +12676,28 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "MvvmLight/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmLightLibs": "5.3.0"
+        }
+      },
+      "MvvmLightLibs/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.3.0"
+        },
+        "compile": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -14769,28 +14772,18 @@
         "native": {
           "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
         }
-      },
-      "winsdkfb/0.13.20170131.2": {
-        "type": "package",
-        "compile": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtime": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x86/native/winsdkfb.dll": {},
-          "runtimes/win10-x86/native/winsdkfb.pri": {},
-          "runtimes/win10-x86/native/winsdkfb/Controls/FacebookLoginButton.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/FacebookDialog.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/FacebookProfilePictureControl.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/Images/fb_blank_profile_portrait.png": {},
-          "runtimes/win10-x86/native/winsdkfb/Themes/Generic.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/Themes/Styles.xbf": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "CommonServiceLocator/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -15150,6 +15143,28 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "MvvmLight/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmLightLibs": "5.3.0"
+        }
+      },
+      "MvvmLightLibs/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.3.0"
+        },
+        "compile": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -17262,29 +17277,22 @@
         "native": {
           "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
         }
-      },
-      "winsdkfb/0.13.20170131.2": {
-        "type": "package",
-        "compile": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "runtime": {
-          "lib/win10/winsdkfb.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x86/native/winsdkfb.dll": {},
-          "runtimes/win10-x86/native/winsdkfb.pri": {},
-          "runtimes/win10-x86/native/winsdkfb/Controls/FacebookLoginButton.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/FacebookDialog.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/FacebookProfilePictureControl.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/Images/fb_blank_profile_portrait.png": {},
-          "runtimes/win10-x86/native/winsdkfb/Themes/Generic.xbf": {},
-          "runtimes/win10-x86/native/winsdkfb/Themes/Styles.xbf": {}
-        }
       }
     }
   },
   "libraries": {
+    "CommonServiceLocator/1.3.0": {
+      "sha512": "fbjO0SNwbOFPdwVfyqv+B7gIJ2CVBOFPKqn1mDDECK7KER8jFaOdcvroFYoAHa0ktPbxi5s+15qOLnA96f8GSA==",
+      "type": "package",
+      "path": "CommonServiceLocator/1.3.0",
+      "files": [
+        "CommonServiceLocator.1.3.0.nupkg.sha512",
+        "CommonServiceLocator.nuspec",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.XML",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.pdb"
+      ]
+    },
     "Microsoft.Azure.Mobile.Client/3.1.0": {
       "sha512": "L/RF/9A/mMFifQsTBRmSPV3UpvG11LR+0vsm7KKkOW7pLeRmsAWFtfKRUKoEfgdi2XoOFSLkXk88w8jVXV5uJA==",
       "type": "package",
@@ -17918,6 +17926,123 @@
         "lib/uap10.0/Microsoft.Xaml.Interactivity.dll",
         "lib/uap10.0/Microsoft.Xaml.Interactivity.pri",
         "lib/uap10.0/Microsoft.Xaml.Interactivity.xml"
+      ]
+    },
+    "MvvmLight/5.3.0": {
+      "sha512": "LIUnWtoAhJFe+WlZkGimSb0pGVPoCuXWk3ERL1KC1tUon2VVZ8kwvGIH1u7fsEnQpiQhh5iha46SI8ymhsBfvQ==",
+      "type": "package",
+      "path": "MvvmLight/5.3.0",
+      "files": [
+        "Content/ViewModel/MainViewModel.cs.pp",
+        "Content/ViewModel/ViewModelLocator.cs.pp",
+        "MvvmLight.5.3.0.nupkg.sha512",
+        "MvvmLight.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "MvvmLightLibs/5.3.0": {
+      "sha512": "h0/CPmYeYabbUfPdXGCJWdeiWGtTP7IVNz3GU6R3Jn3TFWkikCDOSYt/L9bmrroQnZFyosTWP2Gs0LDdTl311Q==",
+      "type": "package",
+      "path": "MvvmLightLibs/5.3.0",
+      "files": [
+        "MvvmLightLibs.5.3.0.nupkg.sha512",
+        "MvvmLightLibs.nuspec",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.dll",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.xml",
+        "lib/SL5/GalaSoft.MvvmLight.dll",
+        "lib/SL5/GalaSoft.MvvmLight.pdb",
+        "lib/SL5/GalaSoft.MvvmLight.xml",
+        "lib/SL5/System.Windows.Interactivity.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/monoandroid1/GalaSoft.MvvmLight.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.pdb",
+        "lib/net35/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net35/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net35/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net35/GalaSoft.MvvmLight.dll",
+        "lib/net35/GalaSoft.MvvmLight.pdb",
+        "lib/net35/GalaSoft.MvvmLight.xml",
+        "lib/net35/System.Windows.Interactivity.dll",
+        "lib/net35/System.Windows.Interactivity.xml",
+        "lib/net40/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net40/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net40/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net40/GalaSoft.MvvmLight.dll",
+        "lib/net40/GalaSoft.MvvmLight.pdb",
+        "lib/net40/GalaSoft.MvvmLight.xml",
+        "lib/net40/System.Windows.Interactivity.dll",
+        "lib/net40/System.Windows.Interactivity.xml",
+        "lib/net45/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net45/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net45/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net45/GalaSoft.MvvmLight.Platform.dll",
+        "lib/net45/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/net45/GalaSoft.MvvmLight.Platform.xml",
+        "lib/net45/GalaSoft.MvvmLight.dll",
+        "lib/net45/GalaSoft.MvvmLight.pdb",
+        "lib/net45/GalaSoft.MvvmLight.xml",
+        "lib/net45/System.Windows.Interactivity.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.XML",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.xml",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.pri",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.xml",
+        "lib/windows81/GalaSoft.MvvmLight.dll",
+        "lib/windows81/GalaSoft.MvvmLight.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.xml",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.xml",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.xml",
+        "lib/wp8/GalaSoft.MvvmLight.dll",
+        "lib/wp8/GalaSoft.MvvmLight.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.xml",
+        "lib/wp8/System.Windows.Interactivity.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.xml",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.xml",
+        "lib/wp81/GalaSoft.MvvmLight.dll",
+        "lib/wp81/GalaSoft.MvvmLight.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.xml",
+        "lib/wp81/System.Windows.Interactivity.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.pri",
+        "lib/wpa81/GalaSoft.MvvmLight.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.pdb",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.pdb"
       ]
     },
     "Newtonsoft.Json/9.0.1": {
@@ -23864,51 +23989,6 @@
         "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll",
         "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll"
       ]
-    },
-    "winsdkfb/0.13.20170131.2": {
-      "sha512": "jXiW3Fb55hsL2rwQa04cJo2iE73b7uhtAjXH1i9FoOv8m/OCDURDdBqpveci+tMjNJybBwSt6RkNl3qXn/bUkQ==",
-      "type": "package",
-      "path": "winsdkfb/0.13.20170131.2",
-      "files": [
-        "build/native/winsdkfb.targets",
-        "lib/win10/design/winsdkfb.dll",
-        "lib/win10/design/winsdkfb.pri",
-        "lib/win10/winsdkfb.pri",
-        "lib/win10/winsdkfb.winmd",
-        "lib/win10/winsdkfb/Controls/FacebookLoginButton.xbf",
-        "lib/win10/winsdkfb/FacebookDialog.xbf",
-        "lib/win10/winsdkfb/FacebookProfilePictureControl.xbf",
-        "lib/win10/winsdkfb/Images/fb_blank_profile_portrait.png",
-        "lib/win10/winsdkfb/Themes/Generic.xbf",
-        "lib/win10/winsdkfb/Themes/Styles.xbf",
-        "runtimes/win10-arm/native/winsdkfb.dll",
-        "runtimes/win10-arm/native/winsdkfb.pri",
-        "runtimes/win10-arm/native/winsdkfb/Controls/FacebookLoginButton.xbf",
-        "runtimes/win10-arm/native/winsdkfb/FacebookDialog.xbf",
-        "runtimes/win10-arm/native/winsdkfb/FacebookProfilePictureControl.xbf",
-        "runtimes/win10-arm/native/winsdkfb/Images/fb_blank_profile_portrait.png",
-        "runtimes/win10-arm/native/winsdkfb/Themes/Generic.xbf",
-        "runtimes/win10-arm/native/winsdkfb/Themes/Styles.xbf",
-        "runtimes/win10-x64/native/winsdkfb.dll",
-        "runtimes/win10-x64/native/winsdkfb.pri",
-        "runtimes/win10-x64/native/winsdkfb/Controls/FacebookLoginButton.xbf",
-        "runtimes/win10-x64/native/winsdkfb/FacebookDialog.xbf",
-        "runtimes/win10-x64/native/winsdkfb/FacebookProfilePictureControl.xbf",
-        "runtimes/win10-x64/native/winsdkfb/Images/fb_blank_profile_portrait.png",
-        "runtimes/win10-x64/native/winsdkfb/Themes/Generic.xbf",
-        "runtimes/win10-x64/native/winsdkfb/Themes/Styles.xbf",
-        "runtimes/win10-x86/native/winsdkfb.dll",
-        "runtimes/win10-x86/native/winsdkfb.pri",
-        "runtimes/win10-x86/native/winsdkfb/Controls/FacebookLoginButton.xbf",
-        "runtimes/win10-x86/native/winsdkfb/FacebookDialog.xbf",
-        "runtimes/win10-x86/native/winsdkfb/FacebookProfilePictureControl.xbf",
-        "runtimes/win10-x86/native/winsdkfb/Images/fb_blank_profile_portrait.png",
-        "runtimes/win10-x86/native/winsdkfb/Themes/Generic.xbf",
-        "runtimes/win10-x86/native/winsdkfb/Themes/Styles.xbf",
-        "winsdkfb.0.13.20170131.2.nupkg.sha512",
-        "winsdkfb.githash.txt",
-        "winsdkfb.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -23919,9 +23999,9 @@
       "Microsoft.Toolkit.Uwp.UI >= 1.3.1",
       "Microsoft.Toolkit.Uwp.UI.Controls >= 1.3.1",
       "Microsoft.Xaml.Behaviors.Uwp.Managed >= 2.0.0",
+      "MvvmLight >= 5.3.0",
       "Newtonsoft.Json >= 9.0.1",
-      "Template10 >= 1.1.12",
-      "winsdkfb >= 0.13.20170131.2"
+      "Template10 >= 1.1.12"
     ],
     "UAP,Version=v10.0": []
   },

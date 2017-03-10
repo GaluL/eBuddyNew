@@ -73,7 +73,7 @@
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
             <!--  settingspage button  -->
-            <Controls:HamburgerButtonInfo x:ConnectionId='5' x:Name="SettingsButton"
+            <Controls:HamburgerButtonInfo x:ConnectionId='7' x:Name="SettingsButton"
                                           PageParameter="0"
                                           PageType="views:SettingsPage">
                 <Controls:HamburgerButtonInfo.NavigationTransitionInfo>
@@ -91,19 +91,32 @@
         </Controls:HamburgerMenu.SecondaryButtons>
 
     </Controls:HamburgerMenu>
-
+    
         <Controls:ModalDialog x:ConnectionId='3' x:Name="LoginModal"
                               CanBackButtonDismiss="False"
                               DisableBackButtonWhenModal="True">
             <Controls:ModalDialog.ModalContent>
-                <controls:LoginPart x:ConnectionId='4' x:Name="loginPart"
+                <controls:LoginPart x:ConnectionId='6' x:Name="loginPart"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                                            
-                                                           />
+                                                          
+                                                               />
             </Controls:ModalDialog.ModalContent>
         </Controls:ModalDialog>
 
+        <Controls:ModalDialog x:ConnectionId='4' x:Name="SignUpModal"
+                              CanBackButtonDismiss="False"
+                              DisableBackButtonWhenModal="True">
+            <Controls:ModalDialog.ModalContent>
+                <controls:SignUpPart x:ConnectionId='5' x:Name="SignUpPart"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                                                   
+                                                     
+                                  />
+            </Controls:ModalDialog.ModalContent>
+        </Controls:ModalDialog>
     </Grid>
 </Page>
 

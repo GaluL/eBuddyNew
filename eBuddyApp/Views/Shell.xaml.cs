@@ -25,6 +25,7 @@ namespace eBuddyApp.Views
 
             // Add checking if already logged in
             LoginModal.IsModal = true;
+            SignUpModal.IsModal = false;
         }
 
         public Shell(INavigationService navigationService) : this()
@@ -57,6 +58,25 @@ namespace eBuddyApp.Views
         {
             //LoginButton.IsEnabled = false;
             LoginModal.IsModal = false;
+        }
+    
+        private void LoginSignUp(object sender, EventArgs e)
+        {
+            LoginModal.IsModal = false;
+            SignUpModal.IsModal = true;
+        }
+        #endregion
+
+        #region SignUp
+        private void signUpHide(object sender, System.EventArgs e)
+        {
+            //LoginButton.IsEnabled = true;
+            SignUpModal.IsModal = false;
+        }
+        private void signedUp(object sender, System.EventArgs e)
+        {
+            //LoginButton.IsEnabled = true;
+            SignUpModal.IsModal = false;
         }
 
         #endregion

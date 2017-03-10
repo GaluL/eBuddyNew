@@ -147,42 +147,6 @@
         <ActivatableClass ActivatableClassId="Microsoft.Graphics.Canvas.CanvasSwapChain" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
-    <Extension Category="windows.activatableClass.inProcessServer">
-      <InProcessServer>
-        <Path>winsdkfb.dll</Path>
-        <ActivatableClass ActivatableClassId="winsdkfb.FBSendRequest" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBError" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBAccessTokenData" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBMediaObject" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBLoginButton" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FacebookDialog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBAppRequest" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBClient" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBPermissions" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBSDKAppEvents" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.winsdkfb_uwp_XamlTypeInfo.XamlMetaDataProvider" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.ColorLuminosityConverter" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBSession" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBResult" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.GraphUriBuilder" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBGroup" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBUser" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBSingleValue" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPermission" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPaginatedArray" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBProfilePictureData" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBCursors" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBAppRequest" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPaging" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBProfilePicture" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.ScaleConverter" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.ProfilePictureControl" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.HttpManager" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBMediaStream" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBFeedRequest" ThreadingModel="both" />
-      </InProcessServer>
-    </Extension>
   </Extensions>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />

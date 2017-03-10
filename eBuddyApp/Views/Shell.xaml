@@ -91,7 +91,7 @@
         </Controls:HamburgerMenu.SecondaryButtons>
 
     </Controls:HamburgerMenu>
-
+    
         <Controls:ModalDialog x:Name="LoginModal"
                               CanBackButtonDismiss="False"
                               DisableBackButtonWhenModal="True">
@@ -100,10 +100,23 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   HideRequested="LoginHide"
-                                  LoggedIn="LoginLoggedIn" />
+                                  LoggedIn="LoginLoggedIn"
+                                  SignUpRequested="LoginSignUp"/>
             </Controls:ModalDialog.ModalContent>
         </Controls:ModalDialog>
 
+        <Controls:ModalDialog x:Name="SignUpModal"
+                              CanBackButtonDismiss="False"
+                              DisableBackButtonWhenModal="True">
+            <Controls:ModalDialog.ModalContent>
+                <controls:SignUpPart x:Name="SignUpPart"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  SignUpHideRequested ="signUpHide"
+                                  SignedUp="signedUp"
+                                  />
+            </Controls:ModalDialog.ModalContent>
+        </Controls:ModalDialog>
     </Grid>
 </Page>
 

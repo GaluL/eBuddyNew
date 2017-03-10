@@ -1,5 +1,7 @@
 App.xbf
+Controls\BandPart.xbf
 Controls\LoginPart.xbf
+Controls\SignUpPart.xbf
 Styles\Custom.xbf
 Views\Busy.xbf
 Views\MainPage.xbf

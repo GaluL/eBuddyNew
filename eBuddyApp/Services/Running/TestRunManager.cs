@@ -45,7 +45,7 @@ namespace eBuddy
          *                                   0 - Before started
          *                                   1 - Chill - 20 second chillout time in this
          *                                       time the will sampe the rest heart beat.
-         *                                   2 - Warm up 20 minutes of warm up before the run.
+         *                                   2 - Warm up  - 20 minutes of warm up before the run.
          *                                   3 - In run - 1200 meters of high pace running
          *                                   4 - Finished - calculate and present score.   
          */
