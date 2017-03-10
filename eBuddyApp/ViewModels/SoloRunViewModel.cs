@@ -19,8 +19,8 @@ namespace eBuddyApp.ViewModels
     {
         #region Commands
 
-        public ICommand StartRun;
-        public ICommand StopRun;
+        public RelayCommand StartRun;
+        public RelayCommand StopRun;
 
         #endregion
 
@@ -46,10 +46,19 @@ namespace eBuddyApp.ViewModels
 
         public SoloRunViewModel() : base()
         {
-            StartRun = new RelayCommand(() => RunManager.Instance.Start(), 
+            StartRun = new RelayCommand(() => {
+                    RunManager.Instance.Start();
+                    StopRun.RaiseCanExecuteChanged();
+                    StartRun.RaiseCanExecuteChanged();
+                }, 
                 () => { return (!RunManager.Instance.InRun /*&& BandService.Instance.IsConnected*/); });
 
-            StopRun = new RelayCommand(() => RunManager.Instance.Stop(),
+            StopRun = new RelayCommand(() =>
+                {
+                    RunManager.Instance.Stop();  
+                    StopRun.RaiseCanExecuteChanged();
+                    StartRun.RaiseCanExecuteChanged();
+                },
                 () => { return RunManager.Instance.InRun; });
 
             RunManager.Instance.OnRouteUpdate += Instance_OnRouteUpdate;
