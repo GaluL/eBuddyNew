@@ -7,6 +7,8 @@ using Template10.Services.NavigationService;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using eBuddy;
+using GalaSoft.MvvmLight.Command;
 using Template10.Mvvm;
 
 namespace eBuddyApp.Views
@@ -17,6 +19,8 @@ namespace eBuddyApp.Views
         public static HamburgerMenu HamburgerMenu => Instance.MyHamburgerMenu;
         Services.SettingsServices.SettingsService _settings;
 
+        public RelayCommand PairBand;
+
         public Shell()
         {
             Instance = this;
@@ -26,6 +30,8 @@ namespace eBuddyApp.Views
             // Add checking if already logged in
             LoginModal.IsModal = true;
             SignUpModal.IsModal = false;
+
+            PairBand = new RelayCommand(() => BandModal.IsModal = true, () => { return !BandService.Instance.IsConnected; } );
         }
 
         public Shell(INavigationService navigationService) : this()
@@ -77,6 +83,22 @@ namespace eBuddyApp.Views
         {
             //LoginButton.IsEnabled = true;
             SignUpModal.IsModal = false;
+        }
+
+        #endregion
+
+        #region Band
+
+        private void HamburgerButtonInfo_OnTapped(object sender, RoutedEventArgs e)
+        {
+            BandModal.IsModal = true;
+        }
+
+        private void BandPart_OnHideRequested(object sender, EventArgs e)
+        {
+            BandModal.IsModal = false;
+
+            PairBand.RaiseCanExecuteChanged();
         }
 
         #endregion

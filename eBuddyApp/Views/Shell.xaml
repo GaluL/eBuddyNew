@@ -19,17 +19,17 @@
 
         <Controls:HamburgerMenu.PrimaryButtons>
             <!--  mainpage button  -->
-            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:MainPage">
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Width="48"
+                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:MainPage">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Width="48"
                                 Height="48"
                                 Symbol="Home" />
-                    <TextBlock Margin="12,0,0,0"
+                        <TextBlock Margin="12,0,0,0"
                                VerticalAlignment="Center"
                                Text="Home" />
-                </StackPanel>
-            </Controls:HamburgerButtonInfo>
-            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:RunPage">
+                    </StackPanel>
+                </Controls:HamburgerButtonInfo>
+                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:RunPage">
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Width="48"
                             Height="48"
@@ -39,7 +39,17 @@
                             Text="Solo Run" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
-            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:RunPage">
+                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:RunPage">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Width="48"
+                            Height="48"
+                            Symbol="Flag" />
+                        <TextBlock Margin="12,0,0,0"
+                            VerticalAlignment="Center"
+                            Text="Score Run" />
+                    </StackPanel>
+                </Controls:HamburgerButtonInfo>
+                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:RunPage">
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Width="48"
                     Height="48"
@@ -64,33 +74,26 @@
                 <!--  profile button  -->
                 <Controls:HamburgerButtonInfo PageType="views:ProfilePage">
                     <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Width="48"
+                        <SymbolIcon Width="48"
                                 Height="48"
                                 Symbol="Contact2" />
-                    <TextBlock Margin="12,0,0,0"
+                        <TextBlock Margin="12,0,0,0"
                                VerticalAlignment="Center"
                                Text="User profile" />
-                </StackPanel>
-            </Controls:HamburgerButtonInfo>
-            <!--  settingspage button  -->
-            <Controls:HamburgerButtonInfo x:Name="SettingsButton"
-                                          PageParameter="0"
-                                          PageType="views:SettingsPage">
-                <Controls:HamburgerButtonInfo.NavigationTransitionInfo>
-                    <SuppressNavigationTransitionInfo />
-                </Controls:HamburgerButtonInfo.NavigationTransitionInfo>
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Width="48"
-                                Height="48"
-                                Symbol="Setting" />
-                    <TextBlock Margin="12,0,0,0"
-                               VerticalAlignment="Center"
-                               Text="Settings" />
-                </StackPanel>
-            </Controls:HamburgerButtonInfo>
-        </Controls:HamburgerMenu.SecondaryButtons>
-
-    </Controls:HamburgerMenu>
+                    </StackPanel>
+                </Controls:HamburgerButtonInfo>
+                <Controls:HamburgerButtonInfo ButtonType="Command" Command="{x:Bind PairBand}">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Width="48"
+                            Height="48"
+                            Symbol="MapDrive" />
+                        <TextBlock Margin="12,0,0,0"
+                            VerticalAlignment="Center"
+                            Text="Band" />
+                    </StackPanel>
+                </Controls:HamburgerButtonInfo>
+            </Controls:HamburgerMenu.SecondaryButtons>
+        </Controls:HamburgerMenu>
     
         <Controls:ModalDialog x:Name="LoginModal"
                               CanBackButtonDismiss="False"
@@ -114,6 +117,18 @@
                                   VerticalAlignment="Center"
                                   SignUpHideRequested ="signUpHide"
                                   SignedUp="signedUp"
+                                  />
+            </Controls:ModalDialog.ModalContent>
+        </Controls:ModalDialog>
+
+        <Controls:ModalDialog x:Name="BandModal"
+                              CanBackButtonDismiss="False"
+                              DisableBackButtonWhenModal="True">
+            <Controls:ModalDialog.ModalContent>
+                <controls:BandPart x:Name="bandPart"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  HideRequested="BandPart_OnHideRequested"
                                   />
             </Controls:ModalDialog.ModalContent>
         </Controls:ModalDialog>

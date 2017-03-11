@@ -95,6 +95,8 @@ namespace eBuddy
                 ;
                 await bandClient.SensorManager.HeartRate.StartReadingsAsync();
 
+                IsConnected = true;
+
                 return true;
             }
             catch (Exception ex)

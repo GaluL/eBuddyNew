@@ -26,7 +26,7 @@
 
         <!-- login form -->
         <StackPanel Grid.Row="1" Margin="20, 16" DataContext="{Binding ElementName=ThisPage}">
-            <Button Background="SteelBlue" HorizontalAlignment="Center" Click="LoginClicked">Pair</Button>
+            <Button Background="SteelBlue" Foreground="WhiteSmoke" HorizontalAlignment="Center" Click="LoginClicked">Pair</Button>
         </StackPanel>
 
     </Grid>
