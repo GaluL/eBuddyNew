@@ -176,14 +176,18 @@ namespace eBuddyApp.Services.Azure
 
             try
             {
-                finishedRuns =
-                    await Service.GetTable<RunItem>()
-                        .Where(x => x.FacebookId == Service.CurrentUser.UserId)
-                        .ToEnumerableAsync();
+                finishedRuns = await Service.GetTable<RunItem>().ToEnumerableAsync();
+                //finishedRuns =
+                //    await Service.GetTable<RunItem>()
+                //        .Where(x => x.FacebookId == Service.CurrentUser.UserId)
+                //        .ToEnumerableAsync();
 
                 foreach (var run in finishedRuns)
                 {
-                    FinishedRuns.Add(run);
+                    if (run.FacebookId.Equals(Service.CurrentUser.UserId))
+                    {
+                        FinishedRuns.Add(run);
+                    }
                 }
             }
             catch (Exception e)

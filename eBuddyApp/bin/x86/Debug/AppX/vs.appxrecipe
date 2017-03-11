@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-10T17:41:26.149</Modified>
+      <Modified>2017-03-11T09:07:58.554</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\eBuddyApp.exe">
       <PackagePath>entrypoint\eBuddyApp.exe</PackagePath>
-      <Modified>2017-03-10T17:40:34.680</Modified>
+      <Modified>2017-03-11T09:07:56.675</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\galkl\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -757,11 +757,11 @@
     <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-10T17:41:25.101</Modified>
+      <Modified>2017-03-11T09:07:57.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\eBuddyNew\eBuddyApp\bin\x86\Debug\Core\eBuddyApp.exe">
       <PackagePath>eBuddyApp.exe</PackagePath>
-      <Modified>2017-03-10T17:41:26.139</Modified>
+      <Modified>2017-03-11T09:07:58.544</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
