@@ -3,6 +3,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using eBuddy;
 using eBuddyApp.Services.Azure;
+using eBuddyApp.Views;
 
 namespace Template10.Samples.SearchSample.Controls
 {
@@ -18,11 +19,15 @@ namespace Template10.Samples.SearchSample.Controls
 
         private async void LoginClicked(object sender, RoutedEventArgs e)
         {
+            Busy.SetBusy(true, "Pairing...");
+
             if (await BandService.Instance.Connect())
             {
                 LoggedIn?.Invoke(this, null);
                 HideRequested?.Invoke(this, null);
             }
+
+            Busy.SetBusy(false);
         }
 
         private void CloseClicked(object sender, RoutedEventArgs e)

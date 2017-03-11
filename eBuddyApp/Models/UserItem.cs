@@ -32,9 +32,9 @@ namespace eBuddyApp.Models
         [JsonProperty(PropertyName = "height")]
         public Double Height { get { return _Height; } set { Set(ref _Height, value); } }
 
-        private bool _Gender = default(bool);
+        private Boolean? _Gender = default(bool);
         [JsonProperty(PropertyName = "gender")]
-        public bool Gender { get { return _Gender; } set { Set(ref _Gender, value); } }
+        public Boolean? Gender { get { return _Gender; } set { Set(ref _Gender, value); } }
 
         private String _Email = default(string);
         [JsonProperty(PropertyName = "email")]

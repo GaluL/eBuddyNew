@@ -1,7 +1,10 @@
 ﻿using System;
+using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using eBuddyApp;
 using eBuddyApp.Services.Azure;
+using eBuddyApp.Views;
 
 namespace Template10.Samples.SearchSample.Controls
 {
@@ -18,11 +21,15 @@ namespace Template10.Samples.SearchSample.Controls
 
         private async void LoginClicked(object sender, RoutedEventArgs e)
         {
+            Busy.SetBusy(true, "Connecting...");
+
             if (await MobileService.Instance.FacebookLogIn())
             {
                 LoggedIn?.Invoke(this, EventArgs.Empty);
                 HideRequested?.Invoke(this, EventArgs.Empty);
             }
+
+            Busy.SetBusy(false);
         }
 
         private void CloseClicked(object sender, RoutedEventArgs e)
@@ -31,7 +38,7 @@ namespace Template10.Samples.SearchSample.Controls
         }
 
         //public Models.UserCredentials UserCredentials { get; set; }
-        private async void fbSignup_OnClick(object sender, RoutedEventArgs e)
+        private void fbSignup_OnClick(object sender, RoutedEventArgs e)
         {
             SignUpRequested?.Invoke(this, null);             
         }

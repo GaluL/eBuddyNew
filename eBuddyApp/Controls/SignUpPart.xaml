@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:winsdkfb="using:winsdkfb"
              Width="300" x:Name="ThisPage"
              mc:Ignorable="d" Height="455.629">
     <UserControl.Resources>
@@ -45,7 +44,7 @@
             <TextBox PlaceholderText="Enter your height"  
             Width="300" Margin="0,10,0,0" Text="{x:Bind UserData.Height, Mode=TwoWay}"/>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <RadioButton GroupName="gender" Content="Male" IsChecked="{x:Bind UserData.Gender, Mode=TwoWay}"  Height="16" Margin="1,5,0,0" ></RadioButton>
+                <RadioButton GroupName="gender" Content="Male" IsChecked="{x:Bind UserData.Gender, Mode=TwoWay}"  Height="16" Margin="1,5,0,0" />
                 <RadioButton GroupName="gender" Content="female" Height="16" Margin="1,5,0,0" />
             </StackPanel>
 

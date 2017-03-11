@@ -57,7 +57,7 @@ namespace eBuddy
             RunData.FacebookId = MobileService.Instance.UserData.FacebookId;
         }
 
-        internal void Start()
+        internal virtual void Start()
         {
             InRun = true;
 
@@ -69,7 +69,7 @@ namespace eBuddy
             LocationService.Instance.Start();
         }
 
-        internal void Stop()
+        internal virtual void Stop()
         {
             InRun = false;
 
@@ -79,10 +79,17 @@ namespace eBuddy
             MobileService.Instance.SaveRunData(RunData);
         }
 
-        private async void Instance_OnLocationChange(Geoposition obj)
+        protected async void Instance_OnLocationChange(Geoposition obj)
         {
             _DataUpdateSyncEvent.Reset();
 
+            await UpdateRunStats(obj);
+
+            _DataUpdateSyncEvent.Set();
+        }
+
+        protected async Task UpdateRunStats(Geoposition obj)
+        {
             _Waypoints.Add(obj.ToGeoPoint());
 
             var route = await MapServiceWrapper.Instance.GetRoute(_Waypoints);
@@ -94,8 +101,6 @@ namespace eBuddy
                 RunData.Time = DateTime.Now - RunData.Date;
                 RunData.Distance = route.LengthInMeters;
                 RunData.Speed = (RunData.Distance / 1000) / (RunData.Time.Seconds / 60.0 / 60.0);
-
-                _DataUpdateSyncEvent.Set();
             }
         }
     }

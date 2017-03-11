@@ -9,6 +9,7 @@
       xmlns:local="using:eBuddyApp.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:eBuddyApp.ViewModels"
+      xmlns:system="using:System"
       mc:Ignorable="d">
 
     <Page.DataContext>
@@ -72,25 +73,25 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="{x:Bind ViewModel.WelcomeText, Mode=OneWay}"/>
                 <TextBlock Grid.Row="1" Text="Your previous runs:"/>
-                <ListView Grid.Row="2" BorderThickness="1" BorderBrush="Gray"  ItemsSource="{x:Bind ViewModel.FinishedRuns, Mode=OneWay}">
-                    <ListView.ItemTemplate>
+                <FlipView Grid.Row="2" ItemsSource="{x:Bind ViewModel.FinishedRuns, Mode=OneWay}">
+                    <FlipView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Date: " />
-                                <TextBlock Text="{Binding Date, Mode=OneWay}"/>
-                                <TextBlock Text=", " />
-                                <TextBlock Text="Distance: " />
-                                <TextBlock Text="{Binding Distance, Mode=OneWay}" FontWeight="Bold" />
-                                <TextBlock Text=", " />
-                                <TextBlock Text="Time: " />
-                                <TextBlock Text="{Binding Time, Mode=OneWay}" FontWeight="Bold"/>
-                                <TextBlock Text=", " />
-                                <TextBlock Text="Speed: " />
-                                <TextBlock Text="{Binding Speed, Mode=OneWay}" FontWeight="Bold"/>
+                            <StackPanel Orientation="Vertical">
+                                <!--<TextBlock Text="Date: " />-->
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Date, Mode=OneWay}" FontWeight="Bold"/>
+                                <!--<TextBlock Text=", " />-->
+                                <!--<TextBlock Text="Distance: " />-->
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Distance, Mode=OneWay}"/>
+                                <!--<TextBlock Text=", " />
+                                <TextBlock Text="Time: " />-->
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Time, Mode=OneWay}"/>
+                                <!--<TextBlock Text=", " />
+                                <TextBlock Text="Speed: " />-->
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Speed, Mode=OneWay}"/>
                             </StackPanel>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                    </FlipView.ItemTemplate>
+                </FlipView>
                 <TextBlock Grid.Row="3" Text="Your upcoming runs:"/>
                 <ListView Grid.Row="4" ItemsSource="{x:Bind ViewModel.UpcomingRuns, Mode=OneWay}">
                     <ListView.ItemTemplate>
