@@ -118,10 +118,11 @@
     <Compile Include="Services\Location\ExtentionMethods.cs" />
     <Compile Include="Services\Location\LocationService.cs" />
     <Compile Include="Services\MapServiceWrapper.cs" />
-    <Compile Include="Services\Running\BuddyRunManager.cs" />
-    <Compile Include="Services\Running\RunManager.cs" />
-    <Compile Include="Services\Running\ScoreRunManager.cs" />
+    <Compile Include="Services\Azure\Running\BuddyRunManager.cs" />
+    <Compile Include="Services\Azure\Running\RunManager.cs" />
+    <Compile Include="Services\Azure\Running\ScoreRunManager.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
+    <Compile Include="Converter\DataConverter.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\ProfilePageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />

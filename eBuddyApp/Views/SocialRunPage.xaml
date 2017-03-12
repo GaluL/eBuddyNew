@@ -10,12 +10,20 @@
     xmlns:local="using:eBuddyApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:eBuddyApp.ViewModels"
+    xmlns:converters="using:eBuddyApp.Converter"
     mc:Ignorable="d"
-    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps">
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:converters1="using:Template10.Converters">
 
     <Page.DataContext>
         <vm:SocialRunViewModel x:Name="ViewModel" />
     </Page.DataContext>
+
+    <!--<Page.Resources>
+        <converters1:StringFormatConverter x:Key="DistanceStringFormatConverter" Format="0:#.## km"/>
+        <converters1:StringFormatConverter x:Key="DateStringFormatConverter" Format="0:mm:ss"/>
+        <converters1:StringFormatConverter x:Key="SpeedStringFormatConverter" Format="0:00.0"/>
+    </Page.Resources>-->
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -84,10 +92,13 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Distance: "/>
                     <TextBlock Grid.Row="0" Grid.Column="1" Text="{x:Bind ViewModel.RunData.Distance, Mode=OneWay}"/>
+                    <!--<TextBlock Grid.Row="0" Grid.Column="1" Text="{x:Bind ViewModel.RunData.Distance, Mode=OneWay, Converter={StaticResource DistanceStringFormatConverter}}"/>-->
                     <TextBlock Grid.Row="0" Grid.Column="2" Text="Time: "/>
                     <TextBlock Grid.Row="0" Grid.Column="3" Text="{x:Bind ViewModel.RunData.Time, Mode=OneWay}"/>
+                    <!--<TextBlock Grid.Row="0" Grid.Column="3" Text="{x:Bind ViewModel.RunData.Time, Mode=OneWay, Converter={StaticResource DateStringFormatConverter}}"/>-->
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="Speed: "/>
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Bind ViewModel.RunData.Speed, Mode=OneWay}"/>
+                    <!--<TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Bind ViewModel.RunData.Speed, Mode=OneWay, Converter={StaticResource SpeedStringFormatConverter}}"/>-->
                     <TextBlock Grid.Row="1" Grid.Column="2" Text="Heartrate: "/>
                     <TextBlock Grid.Row="1" Grid.Column="3" Text="{x:Bind ViewModel.Heartrate, Mode=OneWay}"/>
                 </Grid>
@@ -120,3 +131,4 @@
         </RelativePanel>
     </RelativePanel>
 </Page>
+
