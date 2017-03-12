@@ -61,7 +61,7 @@ namespace eBuddy
         public Timer aTimer;
 
 
-        internal void Start()
+        internal virtual void Start()
         {
             InRun = true;
             aTimer = new Timer(Callback, null, 0, 1); 

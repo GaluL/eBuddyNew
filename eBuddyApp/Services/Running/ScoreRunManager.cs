@@ -170,6 +170,8 @@ namespace eBuddy
                             LocationService.Instance.Stop();
 
                             CalculateScore();
+
+                            MobileService.Instance.SaveUserScore(RunData.Score);
                         }
 
                         break;
@@ -179,7 +181,7 @@ namespace eBuddy
 
         private void CalculateScore()
         {
-            double vo2max_hr_based = 15.3 * (_MaxHeartrate / _MinHeartrate);
+            double vo2max_hr_based = 15.3 * (_MaxHeartrate / (double)_MinHeartrate);
             double avg_hr_prerun = _HeartratePreRunList.Average();
             double vo2max_measures_based = 132.853 - (0.0769 * 2.204 * MobileService.Instance.UserData.Weight) -
                                            (0.387 * MobileService.Instance.UserData.Weight) +
@@ -206,8 +208,6 @@ namespace eBuddy
             double score_by_vo2max = vo2max_avg / 70.0 * 100;
 
             double score_avg = (score_by_mas + score_by_vo2max) / 2;
-
-            RunData.Score = score_avg;
         }
     }
 }

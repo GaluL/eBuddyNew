@@ -72,7 +72,7 @@ namespace eBuddy
         {
             var msg = BuddyRunInfo.FromGeoposition(obj, DateTime.UtcNow);
             msg.SourceUserId = eBuddyApp.Services.Azure.MobileService.Instance.UserData.FacebookId;
-            msg.DestUserId = "sid:a750a0f0db72b4ac1dba1255de64cfb9"; //todo change to real usrid
+            msg.DestUserId = "sid:af7d6ae6d4abbcb585bc46ab45d42c05"; //todo change to real usrid
 
             RunnersHubProxy.Invoke("SendLocation", msg);
         }
@@ -91,8 +91,8 @@ namespace eBuddy
                 if (routeFind.Status == MapRouteFinderStatus.Success)
                 {
                     BuddyRoute = routeFind.Route;
-                    BuddyData.Time = DateTime.Now - RunData.Date;
-                    double distanceDiff = BuddyRoute.LengthInMeters - RunData.Distance;
+                    BuddyData.Time = DateTime.Now - BuddyData.Date;
+                    double distanceDiff = BuddyRoute.LengthInMeters - BuddyData.Distance;
                     BuddyData.Distance = BuddyRoute.LengthInMeters;
                     BuddyData.Speed = (distanceDiff / 1000) / (BuddyData.Time.Seconds / 60.0 / 60.0);
                 }
@@ -130,6 +130,13 @@ namespace eBuddy
             RunnersHubProxy.On<BuddyRunInfo>("buddyLocationUpdate", OnLocationMessage);
 
             return true;
+        }
+
+        internal override async void Start()
+        {
+            await ConnectHub();
+
+            base.Start();
         }
     }
 }

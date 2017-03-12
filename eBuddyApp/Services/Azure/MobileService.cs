@@ -177,10 +177,6 @@ namespace eBuddyApp.Services.Azure
             try
             {
                 finishedRuns = await Service.GetTable<RunItem>().ToEnumerableAsync();
-                //finishedRuns =
-                //    await Service.GetTable<RunItem>()
-                //        .Where(x => x.FacebookId == Service.CurrentUser.UserId)
-                //        .ToEnumerableAsync();
 
                 foreach (var run in finishedRuns)
                 {
@@ -228,6 +224,11 @@ namespace eBuddyApp.Services.Azure
 		public async void SaveRunData(RunItem runData)
         {
             await Service.GetTable<RunItem>().InsertAsync(runData);
+        }
+
+        public void SaveUserScore(double score)
+        {
+
         }
     }
 }

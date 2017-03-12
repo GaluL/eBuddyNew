@@ -39,7 +39,7 @@
                             Text="Solo Run" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
-                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:RunPage">
+                <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:ScoreRunPage">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Width="48"
                             Height="48"

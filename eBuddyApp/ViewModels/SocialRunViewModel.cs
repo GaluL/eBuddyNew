@@ -30,9 +30,7 @@ namespace eBuddyApp.ViewModels
 
         public SocialRunViewModel()
         {
-            StartRun = new RelayCommand(() => { BuddyRunManager.Instance.ConnectHub();
-                    BuddyRunManager.Instance.Start();
-                },
+            StartRun = new RelayCommand(() => { BuddyRunManager.Instance.Start(); },
                 () => { return (!BuddyRunManager.Instance.InRun /*&& BandService.Instance.IsConnected*/); });
 
             StopRun = new RelayCommand(() => BuddyRunManager.Instance.Stop(),
