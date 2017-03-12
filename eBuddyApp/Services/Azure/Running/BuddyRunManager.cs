@@ -15,6 +15,7 @@ using eBuddyApp.Models;
 using eBuddyApp.Services;
 using eBuddyApp.Services.Azure;
 using eBuddyApp.Services.Location;
+using eBuddyApp.Views;
 using Microsoft.WindowsAzure.MobileServices;
 using Template10.Common;
 using Microsoft.AspNet.SignalR.Client;
@@ -120,24 +121,35 @@ namespace eBuddy
 
             await RunnersHubConnection.Start();
 
+
             if (RunnersHubConnection.State != ConnectionState.Connected)
             {
                 return false;
             }
 
-            await RunnersHubProxy.Invoke("Register",
-                eBuddyApp.Services.Azure.MobileService.Instance.Service.CurrentUser.UserId);
+            RunnersHubProxy.On<string>("runStart", OnHandShake);
 
             RunnersHubProxy.On<BuddyRunInfo>("buddyLocationUpdate", OnLocationMessage);
 
+            await RunnersHubProxy.Invoke("Register",
+                eBuddyApp.Services.Azure.MobileService.Instance.Service.CurrentUser.UserId);
+
+            await RunnersHubProxy.Invoke("HandShake","xyz",
+                eBuddyApp.Services.Azure.MobileService.Instance.Service.CurrentUser.UserId);
+
             return true;
+        }
+
+        private void OnHandShake(string obj)
+        {
+            Busy.SetBusy(false);
+            base.Start();
         }
 
         internal override async void Start()
         {
             await ConnectHub();
-
-            base.Start();
+            Busy.SetBusy(true,"waiting for buddy approval");
         }
     }
 }
