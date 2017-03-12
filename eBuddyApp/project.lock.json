@@ -12,6 +12,44 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
+      "CommonTools/0.0.1602.2603": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Client/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.28",
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -2392,6 +2430,44 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "CommonTools/0.0.1602.2603": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Client/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.28",
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
         }
       },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
@@ -4849,6 +4925,44 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "CommonTools/0.0.1602.2603": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Client/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.28",
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
         }
       },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
@@ -7347,6 +7461,44 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
+      "CommonTools/0.0.1602.2603": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Client/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.28",
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -9811,6 +9963,44 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "CommonTools/0.0.1602.2603": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Client/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.28",
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
         }
       },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
@@ -12318,6 +12508,44 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
+      "CommonTools/0.0.1602.2603": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Client/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.28",
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -14782,6 +15010,44 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "CommonTools/0.0.1602.2603": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "10.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/CommonTools.dll": {},
+          "lib/uap10.0/JetBrains.Annotations.dll": {},
+          "lib/uap10.0/mscorlib.dll": {}
+        }
+      },
+      "JetBrains.Annotations/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Client/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.28",
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll": {}
         }
       },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
@@ -17291,6 +17557,67 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.XML",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.pdb"
+      ]
+    },
+    "CommonTools/0.0.1602.2603": {
+      "sha512": "RsjvoM8ScVQr5Ks09y6V25Hv5/jsw/Q0uWhtR/66h1PnGCkjrMtbWf4S67robO2G6DYx2sdENl0wezUEQNvmLg==",
+      "type": "package",
+      "path": "CommonTools/0.0.1602.2603",
+      "files": [
+        "CommonTools.0.0.1602.2603.nupkg.sha512",
+        "CommonTools.nuspec",
+        "lib/net40/CommonTools.dll",
+        "lib/net40/CommonTools.pdb",
+        "lib/net40/JetBrains.Annotations.dll",
+        "lib/net45/CommonTools.dll",
+        "lib/net45/CommonTools.pdb",
+        "lib/net45/JetBrains.Annotations.dll",
+        "lib/net451/CommonTools.dll",
+        "lib/net451/CommonTools.pdb",
+        "lib/net451/JetBrains.Annotations.dll",
+        "lib/net452/CommonTools.dll",
+        "lib/net452/JetBrains.Annotations.dll",
+        "lib/net46/CommonTools.dll",
+        "lib/net46/CommonTools.pdb",
+        "lib/net46/JetBrains.Annotations.dll",
+        "lib/uap10.0/CommonTools.dll",
+        "lib/uap10.0/CommonTools.pdb",
+        "lib/uap10.0/JetBrains.Annotations.dll",
+        "lib/uap10.0/mscorlib.dll"
+      ]
+    },
+    "JetBrains.Annotations/10.0.0": {
+      "sha512": "vyadsDFnDDbR2NK3P++l9AA5ogM+cWlj8kQl8NV9m+LZyEYxjQndZZL/noqb5g8pYpCNellecxtVFdUZ979UWg==",
+      "type": "package",
+      "path": "JetBrains.Annotations/10.0.0",
+      "files": [
+        "JetBrains.Annotations.10.0.0.nupkg.sha512",
+        "JetBrains.Annotations.nuspec",
+        "lib/net20/JetBrains.Annotations.dll",
+        "lib/net20/JetBrains.Annotations.xml",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.dll",
+        "lib/portable-net4+sl4+wp7+netcore45/JetBrains.Annotations.PCL1.xml",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/JetBrains.Annotations.PCL328.xml"
+      ]
+    },
+    "Microsoft.AspNet.SignalR.Client/2.2.1": {
+      "sha512": "ecup1Ztcr9DnLOZo7VQb5ViM8tfip35Bi/IzIOc62KHLdWM5xr1tefOIeQ8sV8h4jF30PIOomFsTr/mSpuw+4Q==",
+      "type": "package",
+      "path": "Microsoft.AspNet.SignalR.Client/2.2.1",
+      "files": [
+        "Microsoft.AspNet.SignalR.Client.2.2.1.nupkg.sha512",
+        "Microsoft.AspNet.SignalR.Client.nuspec",
+        "lib/net40/Microsoft.AspNet.SignalR.Client.XML",
+        "lib/net40/Microsoft.AspNet.SignalR.Client.dll",
+        "lib/net45/Microsoft.AspNet.SignalR.Client.XML",
+        "lib/net45/Microsoft.AspNet.SignalR.Client.dll",
+        "lib/netcore50/Microsoft.AspNet.SignalR.Client.XML",
+        "lib/netcore50/Microsoft.AspNet.SignalR.Client.dll",
+        "lib/portable-net45+sl50+win+wpa81+wp80/Microsoft.AspNet.SignalR.Client.XML",
+        "lib/portable-net45+sl50+win+wpa81+wp80/Microsoft.AspNet.SignalR.Client.dll",
+        "lib/portable-win81+wpa81/Microsoft.AspNet.SignalR.Client.XML",
+        "lib/portable-win81+wpa81/Microsoft.AspNet.SignalR.Client.dll"
       ]
     },
     "Microsoft.Azure.Mobile.Client/3.1.0": {
@@ -23993,6 +24320,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "CommonTools >= 0.0.1602.2603",
+      "Microsoft.AspNet.SignalR.Client >= 2.2.1",
       "Microsoft.Azure.Mobile.Client >= 3.1.0",
       "Microsoft.Band >= 1.3.20628",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",

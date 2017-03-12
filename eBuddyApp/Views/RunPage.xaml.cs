@@ -37,10 +37,10 @@ namespace eBuddyApp.Views
 
         private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals("Route"))
+            if (e.PropertyName.Equals("MyRoute"))
             {
                 myMap.Routes.Clear();
-                myMap.Routes.Add(new MapRouteView(ViewModel.Route));
+                myMap.Routes.Add(new MapRouteView(ViewModel.MyRoute));
             }
         }
     }

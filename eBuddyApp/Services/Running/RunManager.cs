@@ -20,6 +20,7 @@ namespace eBuddy
 {
     class RunManager
     {
+
         private static RunManager _Instance;
         public static RunManager Instance
         {
@@ -35,7 +36,7 @@ namespace eBuddy
         }
 
         private RunItem _RunData;
-        internal RunItem RunData
+        public RunItem RunData
         {
             get { return _RunData; }
             private set { _RunData = value; }
@@ -49,7 +50,7 @@ namespace eBuddy
 
         internal event EventHandler<MapRoute> OnRouteUpdate; 
 
-        private RunManager()
+        public RunManager()
         {
             _DataUpdateSyncEvent = new ManualResetEvent(true);
 
@@ -57,10 +58,13 @@ namespace eBuddy
             RunData.FacebookId = MobileService.Instance.UserData.FacebookId;
         }
 
-        internal virtual void Start()
+        public Timer aTimer;
+
+
+        internal void Start()
         {
             InRun = true;
-
+            aTimer = new Timer(Callback, null, 0, 1); 
             LocationService.Instance.OnLocationChange += Instance_OnLocationChange;
 
             RunData.Date = DateTime.Now;
@@ -69,10 +73,16 @@ namespace eBuddy
             LocationService.Instance.Start();
         }
 
-        internal virtual void Stop()
+        private void Callback(object state)
+        {
+            RunData.Time = DateTime.Now - RunData.Date;
+
+        }
+
+        internal void Stop()
         {
             InRun = false;
-
+            aTimer.Dispose();
             LocationService.Instance.Stop();
             LocationService.Instance.OnLocationChange -= Instance_OnLocationChange;
 
@@ -99,8 +109,11 @@ namespace eBuddy
                 OnRouteUpdate?.Invoke(this, route);
 
                 RunData.Time = DateTime.Now - RunData.Date;
+                double distanceDiff = route.LengthInMeters -RunData.Distance;
                 RunData.Distance = route.LengthInMeters;
-                RunData.Speed = (RunData.Distance / 1000) / (RunData.Time.Seconds / 60.0 / 60.0);
+                RunData.Speed = (distanceDiff / 1000) / (RunData.Time.Seconds / 60.0 / 60.0);
+
+                _DataUpdateSyncEvent.Set();
             }
         }
     }

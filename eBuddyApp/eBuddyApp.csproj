@@ -106,6 +106,7 @@
     <Compile Include="Controls\LoginPart.xaml.cs">
       <DependentUpon>LoginPart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\BuddyRunInfo.cs" />
     <Compile Include="Models\RunItem.cs" />
     <Compile Include="Models\LiveRunStats.cs" />
     <Compile Include="Models\ScheduledRunItem.cs" />
@@ -117,14 +118,15 @@
     <Compile Include="Services\Location\ExtentionMethods.cs" />
     <Compile Include="Services\Location\LocationService.cs" />
     <Compile Include="Services\MapServiceWrapper.cs" />
+    <Compile Include="Services\Running\BuddyRunManager.cs" />
     <Compile Include="Services\Running\RunManager.cs" />
     <Compile Include="Services\Running\ScoreRunManager.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\ProfilePageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
-    <Compile Include="ViewModels\ScoreRunViewModel.cs" />
-    <Compile Include="ViewModels\SoloRunViewModel.cs" />
+    <Compile Include="ViewModels\SocialRunViewModel.cs" />
+    <Compile Include="ViewModels\ScoreRunViewModel.cs" />    <Compile Include="ViewModels\SoloRunViewModel.cs" />
     <Compile Include="Views\Busy.xaml.cs">
       <DependentUpon>Busy.xaml</DependentUpon>
     </Compile>
@@ -133,6 +135,9 @@
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SocialRunPage.xaml.cs">
+      <DependentUpon>SocialRunPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RunPage.xaml.cs">
       <DependentUpon>RunPage.xaml</DependentUpon>
@@ -198,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SocialRunPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

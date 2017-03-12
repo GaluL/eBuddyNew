@@ -28,19 +28,20 @@ namespace eBuddyApp.ViewModels
 
         public bool IsScoreRun { get; set; }
 
-        public RunItem RunData
+        public virtual RunItem RunData
         {
             get { return RunManager.Instance.RunData; }
         }
 
-        private int _Heartrate;
+        public int _Heartrate;
         public int Heartrate { get { return _Heartrate; } private set { Set(ref _Heartrate, value); } }
 
-        private MapRoute _Route;
-        public MapRoute Route { get { return _Route; } private set { Set(ref _Route, value); } }
+        public MapRoute _MyRoute;
+        public MapRoute MyRoute { get { return _MyRoute; } private set { Set(ref _MyRoute, value); } }
 
-        private Geopoint _CurrentLocation;
-        public Geopoint CurrentLocation { get { return _CurrentLocation; } private set { Set(ref _CurrentLocation, value); } }
+        public Geopoint _CurrentLocation;
+        public Geopoint CurrentLocation { get { return _CurrentLocation; }
+            set { Set(ref _CurrentLocation, value); } }
 
         #endregion
 
@@ -68,19 +69,19 @@ namespace eBuddyApp.ViewModels
             CurrentLocation = ExtentionMethods.GetDefaultPoint();
         }
 
-        private void Instance_OnHeartRateChange(object sender, int e)
+        public void Instance_OnHeartRateChange(object sender, int e)
         {
             Heartrate = e;
         }
 
-        private void Instance_OnLocationChange(Geoposition obj)
+        public void Instance_OnLocationChange(Geoposition obj)
         {
             CurrentLocation = obj.ToGeoPoint();
         }
 
-        private void Instance_OnRouteUpdate(object sender, MapRoute e)
+        public void Instance_OnRouteUpdate(object sender, MapRoute e)
         {
-            Route = e;
+            MyRoute = e;
         }
     }
 }

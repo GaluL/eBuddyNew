@@ -8,7 +8,7 @@ using Template10.Mvvm;
 
 namespace eBuddyApp.Models
 {
-    class RunItem : BindableBase
+    public class RunItem : BindableBase
     {
         public  string Id { get; set; }
 
@@ -30,6 +30,7 @@ namespace eBuddyApp.Models
 
         double _Speed = default(double);
         [JsonProperty(PropertyName = "speed")]
-        public double Speed { get { return _Speed; } set { Set(ref _Speed, value); } }
+        public double Speed { get { return _Speed; }
+            set { Set(ref _Speed, value); } }
     }
 }
