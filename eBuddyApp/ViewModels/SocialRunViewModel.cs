@@ -53,12 +53,18 @@ namespace eBuddyApp.ViewModels
             BandService.Instance.OnHeartRateChange += Instance_OnHeartRateChange;
             CurrentLocation = ExtentionMethods.GetDefaultPoint();
             BuddyRunManager.Instance.OnBuddyRouteUpdate += Instance_OnBuddyRouteUpdate;
+            BuddyRunManager.Instance.OnBuddyLocationUpdate += Instance_OnBuddyLocationUpdate;
 
         }
 
         private void Instance_OnBuddyRouteUpdate(MapRoute e)
         {
             BuddyRoute = e;
+        }
+
+        private void Instance_OnBuddyLocationUpdate(Geopoint obj)
+        {
+            BuddyLocation = obj;
         }
     }
 

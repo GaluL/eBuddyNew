@@ -70,10 +70,10 @@ namespace eBuddy
             BuddyData = new RunItem();
             _buddyWaypoints = new ObservableCollection<Geopoint>();
             _routeFinderEvent = new ManualResetEvent(true);
-            LocationService.Instance.OnLocationChange += Buddy_OnLocationChange;
+            LocationService.Instance.OnLocationChange += My_OnLocationChange;
         }
 
-        private void Buddy_OnLocationChange(Windows.Devices.Geolocation.Geoposition obj)
+        private void My_OnLocationChange(Windows.Devices.Geolocation.Geoposition obj)
         {
             var msg = BuddyRunInfo.FromGeoposition(obj, DateTime.UtcNow);
             msg.SourceUserId = eBuddyApp.Services.Azure.MobileService.Instance.UserData.FacebookId;
@@ -100,6 +100,7 @@ namespace eBuddy
                     BuddyData.Distance = BuddyRoute.LengthInMeters;
                     BuddyData.Speed = (distanceDiff / 1000) / ((BuddyData.Time.Subtract(DateTime.Now.TimeOfDay)).TotalSeconds / 60.0 / 60.0);
                     BuddyData.Time = DateTime.Now - BuddyData.Date;
+                    OnBuddyLocationUpdate?.Invoke(obj.GetGeoPoint());
                 }
             }
 
@@ -137,7 +138,7 @@ namespace eBuddy
             await RunnersHubProxy.Invoke("Register",
                 eBuddyApp.Services.Azure.MobileService.Instance.Service.CurrentUser.UserId);
 
-            await RunnersHubProxy.Invoke("HandShake","xyzw",
+            await RunnersHubProxy.Invoke("HandShake","shiran3",
                 eBuddyApp.Services.Azure.MobileService.Instance.Service.CurrentUser.UserId);
 
             return true;
@@ -151,8 +152,10 @@ namespace eBuddy
 
         internal override async void Start()
         {
+            Busy.SetBusy(true, "waiting for buddy approval");
             await ConnectHub();
-            Busy.SetBusy(true,"waiting for buddy approval");
         }
+
+        public event Action<Geopoint> OnBuddyLocationUpdate;
     }
 }

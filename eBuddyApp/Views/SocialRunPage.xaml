@@ -118,7 +118,7 @@
                     <maps:MapControl x:Name="myMap2" Background="Orange"
                                      TiltInteractionMode="GestureAndControl"
                                      ZoomInteractionMode="GestureAndControl"
-                                     Center="{x:Bind ViewModel.CurrentLocation, Mode=OneWay}"
+                                     Center="{x:Bind ViewModel.BuddyLocation, Mode=OneWay}"
                                      MapServiceToken="OARdWd6u76SCOJpF63br~nEfdGL_BYBbFn1jt0wom8Q~Aoyg4vAPbQczjy1VVSUyFfFcpz_G1Q9eqrBUO9FdMP1a725us7XvhB7zycvi-lbq" Margin="166,-132,10,-58" Height="Auto"
                                      ZoomLevel="15" Grid.ColumnSpan="2"/>
                 </Grid>
