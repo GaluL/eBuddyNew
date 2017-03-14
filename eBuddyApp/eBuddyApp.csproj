@@ -110,7 +110,6 @@
     <Compile Include="Models\RunItem.cs" />
     <Compile Include="Models\LiveRunStats.cs" />
     <Compile Include="Models\ScheduledRunItem.cs" />
-    <Compile Include="Models\ScoreRunItem.cs" />
     <Compile Include="Models\UserItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Azure\MobileService.cs" />
@@ -118,9 +117,9 @@
     <Compile Include="Services\Location\ExtentionMethods.cs" />
     <Compile Include="Services\Location\LocationService.cs" />
     <Compile Include="Services\MapServiceWrapper.cs" />
-    <Compile Include="Services\Azure\Running\BuddyRunManager.cs" />
-    <Compile Include="Services\Azure\Running\RunManager.cs" />
-    <Compile Include="Services\Azure\Running\ScoreRunManager.cs" />
+    <Compile Include="Services\Running\BuddyRunManager.cs" />
+    <Compile Include="Services\Running\RunManager.cs" />
+    <Compile Include="Services\Running\ScoreRunManager.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
     <Compile Include="Converter\DataConverter.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />

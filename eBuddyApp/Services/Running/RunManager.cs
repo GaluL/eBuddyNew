@@ -20,7 +20,7 @@ namespace eBuddy
 {
     class RunManager
     {
-
+        private int _lastLocationTimeSeconds = 1;
         private static RunManager _Instance;
         public static RunManager Instance
         {
@@ -46,7 +46,7 @@ namespace eBuddy
 
         private IList<Geopoint> _Waypoints;
 
-        private ManualResetEvent _DataUpdateSyncEvent;
+        protected ManualResetEvent _DataUpdateSyncEvent;
 
         internal event EventHandler<MapRoute> OnRouteUpdate; 
 
@@ -79,7 +79,7 @@ namespace eBuddy
 
         }
 
-        internal void Stop()
+        internal virtual void Stop()
         {
             InRun = false;
             aTimer.Dispose();
@@ -89,7 +89,7 @@ namespace eBuddy
             MobileService.Instance.SaveRunData(RunData);
         }
 
-        protected async void Instance_OnLocationChange(Geoposition obj)
+        protected virtual async void Instance_OnLocationChange(Geoposition obj)
         {
             _DataUpdateSyncEvent.Reset();
 
@@ -107,14 +107,12 @@ namespace eBuddy
             if (route != null)
             {
                 OnRouteUpdate?.Invoke(this, route);
-
-                RunData.Time = DateTime.Now - RunData.Date;
-                double distanceDiff = route.LengthInMeters -RunData.Distance;
+                double distanceDiff = route.LengthInMeters - RunData.Distance;
                 RunData.Distance = route.LengthInMeters;
-                RunData.Speed = (distanceDiff / 1000) / (RunData.Time.Seconds / 60.0 / 60.0);
+                RunData.Speed = (distanceDiff / 1000) / (_lastLocationTimeSeconds / 60.0 / 60.0);
+                _lastLocationTimeSeconds = RunData.Time.Seconds;
 
-                _DataUpdateSyncEvent.Set();
             }
-        }
+}
     }
 }

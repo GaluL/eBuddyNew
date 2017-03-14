@@ -9,15 +9,7 @@ namespace eBuddyApp.Models
 {
     class ScoreRunItem : RunItem
     {
-        public enum ERunPhase
-        {
-            NotStarted,
-            Chill,
-            WarmUp,
-            PreRun,
-            Intense,
-            Finished
-        }
+
 
         ERunPhase _RunPhase = ERunPhase.NotStarted;
         [JsonProperty(PropertyName = "runPhase")]

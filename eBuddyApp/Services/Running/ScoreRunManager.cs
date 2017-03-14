@@ -14,164 +14,143 @@ using Template10.Utils;
 
 namespace eBuddy
 {
-    internal class ScoreRunManager
+    internal class ScoreRunManager : RunManager
     {
+        public enum ERunPhase
+        {
+            NotStarted,
+            Chill,
+            WarmUp,
+            PreRun,
+            Intense,
+            Finished
+        }
+
         private const int CHILL_TIME = 20;
         private const int PRE_RUN_TIME = 10;
         private const int WARM_UP_DISTANCE = 1600;
-        private const int INTENSE_DISTANCE = 1200;
-           
-        private static ScoreRunManager _Instance;
-        public static ScoreRunManager Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = new ScoreRunManager();
-                }
-
-                return _Instance;
-            }
-        }
-
-        private IList<Geopoint> _Waypoints;
-
-        private ManualResetEvent _DataUpdateSyncEvent;
-
-        internal event EventHandler<MapRoute> OnRouteUpdate;
-
-        private ScoreRunItem _RunData;
-        internal ScoreRunItem RunData
-        {
-            get { return _RunData; }
-            private set { _RunData = value; }
-        }
+        private const int INTENSE_DISTANCE = 1200;      
 
         private TimeSpan _TimeBeforeIntense;
         private TimeSpan _TimeBeforePreRun;
         private double _DistanceBeforeWarmUp;
         private int _MinHeartrate = int.MaxValue;
         private int _MaxHeartrate = 0;
-        private double _DistanceBeforeIntense;
+        //private double _DistanceBeforeIntense;
         private List<int> _HeartratePreRunList;
 
-        private ScoreRunManager()
+        public event EventHandler<ERunPhase> OnRunPhaseChange; 
+        private ERunPhase _RunPhase;
+        public ERunPhase RunPhase
+        {
+            get { return _RunPhase; }
+            private set
+            {
+                _RunPhase = value;
+
+                OnRunPhaseChange?.Invoke(this, value);
+            }
+        }
+
+        private ScoreRunManager() : base()
         {
             _HeartratePreRunList = new List<int>();
         }
 
-        public void Start()
+        internal override void Start()
         { 
-            LocationService.Instance.OnLocationChange += Instance_OnLocationChange;
+            RunPhase = ERunPhase.Chill;
 
-            RunData.Date = DateTime.Now;
-            RunData.RunPhase = ScoreRunItem.ERunPhase.Chill;
-            _Waypoints = new List<Geopoint>();
+            base.Start();
 
-            LocationService.Instance.Start();
-
+            LocationService.Instance.OnLocationChange += this.Instance_OnLocationChange;
             BandService.Instance.OnHeartRateChange += Instance_OnHeartRateChange;
         }
 
         private void Instance_OnHeartRateChange(object sender, int e)
         {
-            if (RunData.RunPhase == ScoreRunItem.ERunPhase.Chill && e < _MinHeartrate)
+            if (RunPhase == ERunPhase.Chill && e < _MinHeartrate)
             {
                 _MinHeartrate = e;
             }
-            else if (RunData.RunPhase == ScoreRunItem.ERunPhase.Intense && e > _MaxHeartrate)
+            else if (RunPhase == ERunPhase.Intense && e > _MaxHeartrate)
             {
                 _MaxHeartrate = e;
             }
-            else if (RunData.RunPhase == ScoreRunItem.ERunPhase.PreRun)
+            else if (RunPhase == ERunPhase.PreRun)
             {
                 _HeartratePreRunList.Add(e);
             }
         }
 
-        public void Stop()
+        internal override void Stop()
         {
+            base.Stop();
+
             BandService.Instance.OnHeartRateChange -= Instance_OnHeartRateChange;
-            LocationService.Instance.Stop();
-            _RunData.RunPhase = ScoreRunItem.ERunPhase.NotStarted;
+            
+            RunPhase = ERunPhase.NotStarted;
         }
 
-        protected async void Instance_OnLocationChange(Geoposition obj)
+        protected override async void Instance_OnLocationChange(Geoposition obj)
         {
             _DataUpdateSyncEvent.Reset();
 
             await UpdateRunStats(obj);
 
+            UpdateTestPhase();
+
             _DataUpdateSyncEvent.Set();
-        }
-
-        private async Task UpdateRunStats(Geoposition obj)
-        {
-            _Waypoints.Add(obj.ToGeoPoint());
-
-            var route = await MapServiceWrapper.Instance.GetRoute(_Waypoints);
-
-            if (route != null)
-            {
-                OnRouteUpdate?.Invoke(this, route);
-
-                RunData.Time = DateTime.Now - RunData.Date;
-                RunData.Distance = route.LengthInMeters;
-                RunData.Speed = (RunData.Distance / 1000) / (RunData.Time.Seconds / 60.0 / 60.0);
-            }
         }
 
         private void UpdateTestPhase()
         {
-            switch (RunData.RunPhase)
+            switch (RunPhase)
             {
-                case ScoreRunItem.ERunPhase.Chill:
+                case ERunPhase.Chill:
                 {
-                    if (RunData.Time.Seconds >= CHILL_TIME)
+                    if (RunData.Time.TotalSeconds >= CHILL_TIME)
                     {
                         _DistanceBeforeWarmUp = RunData.Distance;
-                        RunData.RunPhase++;
+                        RunPhase++;
                     }
 
                     break;
                 }
-                case ScoreRunItem.ERunPhase.WarmUp:
+                case ERunPhase.WarmUp:
                     {
                         if (RunData.Distance >= _DistanceBeforeWarmUp + WARM_UP_DISTANCE)
                         {
                             _TimeBeforePreRun = RunData.Time;
-                            RunData.RunPhase++;
+                            RunPhase++;
                         }
 
                         break;
                     }
-                case ScoreRunItem.ERunPhase.PreRun:
+                case ERunPhase.PreRun:
                     {
-                        if (RunData.Time.Seconds >= _TimeBeforePreRun.Seconds + PRE_RUN_TIME)
+                        if (RunData.Time.TotalSeconds >= _TimeBeforePreRun.TotalSeconds + PRE_RUN_TIME)
                         {
-                            RunData.RunPhase++;
+                            RunPhase++;
                             _TimeBeforeIntense = RunData.Time;
-                            _DistanceBeforeIntense = RunData.Distance;
+                            //_DistanceBeforeIntense = RunData.Distance;
                             RunData.Distance = 0;
                             RunData.Time = TimeSpan.Zero;
                         }
 
                         break;
                     }
-                case ScoreRunItem.ERunPhase.Intense:
+                case ERunPhase.Intense:
                     {
                         if (RunData.Distance >= INTENSE_DISTANCE)
                         {
 
                             BandService.Instance.OnHeartRateChange -= Instance_OnHeartRateChange;
-                            RunData.RunPhase++;
+                            RunPhase++;
 
                             LocationService.Instance.Stop();
 
                             CalculateScore();
-
-                            MobileService.Instance.SaveUserScore(RunData.Score);
                         }
 
                         break;
@@ -179,7 +158,7 @@ namespace eBuddy
             }
         }
 
-        private void CalculateScore()
+        private double CalculateScore()
         {
             double vo2max_hr_based = 15.3 * (_MaxHeartrate / (double)_MinHeartrate);
             double avg_hr_prerun = _HeartratePreRunList.Average();
@@ -207,7 +186,7 @@ namespace eBuddy
             double score_by_mas = mas_avg / 6.22 * 100;
             double score_by_vo2max = vo2max_avg / 70.0 * 100;
 
-            double score_avg = (score_by_mas + score_by_vo2max) / 2;
+            return (score_by_mas + score_by_vo2max) / 2;
         }
     }
 }

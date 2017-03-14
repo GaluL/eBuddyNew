@@ -38,7 +38,7 @@ namespace eBuddyApp.ViewModels
                 StopRun.RaiseCanExecuteChanged();
                 StartRun.RaiseCanExecuteChanged();
             },
-    () => { return (!BuddyRunManager.Instance.InRun /*&& BandService.Instance.IsConnected*/); });
+            () => { return (!BuddyRunManager.Instance.InRun /*&& BandService.Instance.IsConnected*/); });
 
             StopRun = new RelayCommand(() =>
             {
@@ -52,6 +52,7 @@ namespace eBuddyApp.ViewModels
             LocationService.Instance.OnLocationChange += Instance_OnLocationChange;
             BandService.Instance.OnHeartRateChange += Instance_OnHeartRateChange;
             CurrentLocation = ExtentionMethods.GetDefaultPoint();
+            BuddyLocation = ExtentionMethods.GetDefaultPoint();
             BuddyRunManager.Instance.OnBuddyRouteUpdate += Instance_OnBuddyRouteUpdate;
             BuddyRunManager.Instance.OnBuddyLocationUpdate += Instance_OnBuddyLocationUpdate;
 
