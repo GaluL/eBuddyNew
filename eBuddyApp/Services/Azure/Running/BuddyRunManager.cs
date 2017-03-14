@@ -33,6 +33,9 @@ namespace eBuddy
 
         private ManualResetEvent _routeFinderEvent;
 
+        private int _buddyLastLocationTimeSeconds = 1;
+
+
         public ObservableCollection<Geopoint> BuddyWaypoints
         {
             get { return _buddyWaypoints; }
@@ -93,10 +96,10 @@ namespace eBuddy
                 if (routeFind.Status == MapRouteFinderStatus.Success)
                 {
                     BuddyRoute = routeFind.Route;
-                    BuddyData.Time = DateTime.Now - BuddyData.Date;
                     double distanceDiff = BuddyRoute.LengthInMeters - BuddyData.Distance;
                     BuddyData.Distance = BuddyRoute.LengthInMeters;
-                    BuddyData.Speed = (distanceDiff / 1000) / (BuddyData.Time.TotalSeconds / 60.0 / 60.0);
+                    BuddyData.Speed = (distanceDiff / 1000) / ((BuddyData.Time.Subtract(DateTime.Now.TimeOfDay)).TotalSeconds / 60.0 / 60.0);
+                    BuddyData.Time = DateTime.Now - BuddyData.Date;
                 }
             }
 

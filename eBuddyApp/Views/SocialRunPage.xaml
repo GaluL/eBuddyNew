@@ -113,17 +113,17 @@
                                      TiltInteractionMode="GestureAndControl"
                                      ZoomInteractionMode="GestureAndControl"
                                      Center="{x:Bind ViewModel.CurrentLocation, Mode=OneWay}"
-                                     MapServiceToken="OARdWd6u76SCOJpF63br~nEfdGL_BYBbFn1jt0wom8Q~Aoyg4vAPbQczjy1VVSUyFfFcpz_G1Q9eqrBUO9FdMP1a725us7XvhB7zycvi-lbq" Margin="-15,-357,-38,-73" Height="Auto" Width="Auto"
+                                     MapServiceToken="OARdWd6u76SCOJpF63br~nEfdGL_BYBbFn1jt0wom8Q~Aoyg4vAPbQczjy1VVSUyFfFcpz_G1Q9eqrBUO9FdMP1a725us7XvhB7zycvi-lbq" Margin="-15,-342,10,2" Height="Auto" Width="Auto"
                                      ZoomLevel="15" Grid.ColumnSpan="2"/>
                     <maps:MapControl x:Name="myMap2" Background="Orange"
                                      TiltInteractionMode="GestureAndControl"
                                      ZoomInteractionMode="GestureAndControl"
                                      Center="{x:Bind ViewModel.CurrentLocation, Mode=OneWay}"
-                                     MapServiceToken="OARdWd6u76SCOJpF63br~nEfdGL_BYBbFn1jt0wom8Q~Aoyg4vAPbQczjy1VVSUyFfFcpz_G1Q9eqrBUO9FdMP1a725us7XvhB7zycvi-lbq" Margin="10,-62,-14,-128" Height="Auto"
-                                     ZoomLevel="15" Grid.Column="1"/>
+                                     MapServiceToken="OARdWd6u76SCOJpF63br~nEfdGL_BYBbFn1jt0wom8Q~Aoyg4vAPbQczjy1VVSUyFfFcpz_G1Q9eqrBUO9FdMP1a725us7XvhB7zycvi-lbq" Margin="166,-132,10,-58" Height="Auto"
+                                     ZoomLevel="15" Grid.ColumnSpan="2"/>
                 </Grid>
 
-                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,254.667,15,-275.667">
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,196.667,15,-217.667">
                     <Button Command="{x:Bind ViewModel.StartRun}" Foreground="WhiteSmoke" Background="Orange" HorizontalAlignment="Left">Start</Button>
                     <Button Command="{x:Bind ViewModel.StopRun}" Foreground="WhiteSmoke" Background="Orange">Stop</Button>
                 </StackPanel>
